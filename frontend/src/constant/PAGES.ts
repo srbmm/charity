@@ -3,25 +3,29 @@ const PAGES = {
     "home": {url: "/", label: "خانه"},
     // news
     "news": {url: "news", label: "اخبار"},
+    "oneNews": {url: ":id", label: ""},
     // intruduce
     "introductions": {url: "introductions", label: "معرفی ها"},
     "visions": {url: "visions", label: "چشم انداز ها"},
     "missions": {url: "missions", label: "ماموریت ها"},
     "bylaws": {url: "bylaws", label: "اساسنامه"},
-    // history
+    // histories
     "histories": {url: "histories", label: "تاریخچه ها"},
     "performanceReports": {url: "performance−reports", label: "گزارش های عملکردی"},
+    "onePerformanceReport": {url: ":id", label: ""},
     "financialStatements": {url: "financial−statements", label: "صورت های مالی"},
-    "auditReports": {url: "audit-reports", label: "گزارش های حسابرسی"},
+    "oneFinancialStatement": {url: ":id", label: ""},
+    "auditReport": {url: "audit-report", label: "گزارش های حسابرسی"},
+    "oneAuditReport": {url: ":id", label: ""},
     // profile
     "profiles": {url: "profiles", label: "پروفایل ها"},
     "participants": {url: "participants", label: "مشارکت کننده ها"},
+    "oneParticipant": {url: ":id", label: ""},
     "employees": {url: "employees", label: "کارکنان"},
-    //contact us
-    "contactUs": {url: "contact-us", label: "ارتباط با ما"},
-    // help us
+    "oneEmployee": {url: ":id", label: ""},
+    // help
+    "help": {url: "help", label: "کمک"},
     "helpUs": {url: "help-us", label: "کمک کردن"},
-    // need help
     "needHelp": {url: "need-help", label: "درخواست کمک"},
 }
 export default PAGES;
