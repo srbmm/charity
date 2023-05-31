@@ -1,0 +1,14 @@
+
+
+
+
+# django 
+django
+djangorestframework
+
+
+
+# for media
+Pillow
+
+
