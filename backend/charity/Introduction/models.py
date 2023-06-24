@@ -96,6 +96,7 @@ class Mission(models.Model):
 class Chart(models.Model):
     title = models.CharField(max_length=50,default='Chart')
     file = models.FileField(upload_to='Introduction/')
+    last_update = models.DateTimeField('last update',auto_now=True)
 
     class Meta:
         db_table = 'Chart'
@@ -113,3 +114,30 @@ class Chart(models.Model):
     def delete(self, *args, **kwargs):
         # Prevent deletion of the only instance
         pass
+
+
+class Statute(models.Model):
+    title = models.CharField(max_length=50)
+    text = models.TextField()
+    file = models.FileField(upload_to='Introduction/')
+    last_update = models.DateTimeField('last update',auto_now=True)
+
+    class Meta:
+        db_table = 'Statute'
+        verbose_name = 'Statute'
+        verbose_name_plural = 'Statute'
+
+
+    objects = SingletonModelManager()
+
+    def save(self, *args, **kwargs):
+        if Statute.objects.exists() and not self.pk:
+            self.pk = 1
+        super().save(*args, **kwargs)
+    
+
+    def delete(self, *args, **kwargs):
+        # Prevent deletion of the only instance
+        pass
+
+
