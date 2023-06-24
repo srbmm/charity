@@ -39,5 +39,29 @@ class Vision(models.Model):
         pass
     
 
+class History(models.Model):
+    title = models.CharField(max_length=50)
+    avatar = models.ImageField(blank=True,upload_to='Introduction/')
+    text = models.TextField()
+    last_update = models.DateTimeField('last update',auto_now=True)
+
+
+    class Meta:
+        db_table = 'History'
+        verbose_name = 'History'
+        verbose_name_plural = 'History'
+
+    
+    objects = SingletonModelManager()
+
+    def save(self, *args, **kwargs):
+        if Vision.objects.exists() and not self.pk:
+            self.pk = 1
+        super().save(*args, **kwargs)
+    
+
+    def delete(self, *args, **kwargs):
+        # Prevent deletion of the only instance
+        pass
 
 

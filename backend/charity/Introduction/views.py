@@ -3,8 +3,8 @@ from rest_framework.response import Response
 from rest_framework import status
 
 
-from .models import Vision
-from .serializers import VisionSerializer
+from .models import Vision,History
+from .serializers import VisionSerializer , HistorySerializer
 
 
 
@@ -17,5 +17,14 @@ class VisionView(APIView):
 
     
 
+
+
+class HistoryView(APIView):
+
+    def get(self,request):
+        history = History.objects.all().first()
+        serializer = HistorySerializer(history,context = {'request':request})
+        return Response(serializer.data,status=status.HTTP_200_OK)
+    
 
 
