@@ -165,3 +165,17 @@ class Values(models.Model):
         # Prevent deletion of the only instance
         pass
 
+
+
+class Permissions(models.Model):
+    title = models.CharField(max_length=50)
+    file = models.FileField(upload_to='Introduction/')
+    last_update = models.DateTimeField('last update',auto_now=True)
+
+
+    class Meta:
+        db_table = 'Permissions'
+        verbose_name = 'Permissions'
+        verbose_name_plural = 'Permissions'
+
+    

@@ -5,12 +5,13 @@ from rest_framework import status
 
 from .models import (
     Vision,History,Mission,Chart,Statute,
-    Values
+    Values,Permissions
 )
 
 from .serializers import (
     VisionSerializer , HistorySerializer,MissionSerializer,
-    ChartSerializer,StatuteSerializer,ValuesSerializer
+    ChartSerializer,StatuteSerializer,ValuesSerializer,
+    PermissionsSerializer
 )
 
 
@@ -68,5 +69,14 @@ class ValuesView(APIView):
         serializer = ValuesSerializer(values,context = {'request':request})
         return Response(serializer.data,status=status.HTTP_200_OK)
     
+
+class PermissionsView(APIView):
+
+    def get(self,request):
+        permissions = Permissions.objects.all()
+        serializer = PermissionsSerializer(permissions,many=True,context = {'request':request})
+        return Response(serializer.data,status=status.HTTP_200_OK)
+    
+
 
 

@@ -4,7 +4,7 @@ from django.urls import path
 
 from .views import (
     VisionView,HistoryView,MissionView,ChartView,
-    StatuteView,ValuesView
+    StatuteView,ValuesView,PermissionsView
 )
 
 urlpatterns = [
@@ -14,6 +14,7 @@ urlpatterns = [
     path('chart/',ChartView.as_view(),name='chart'),
     path('statute/',StatuteView.as_view(),name='statute'),
     path('values/',ValuesView.as_view(),name='values'),
+    path('permissions/',PermissionsView.as_view(),name='permissions'),
     
 
 ]
