@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Vision,History
+from .models import Vision,History,Mission
 
 
 @admin.register(Vision)
@@ -22,7 +22,17 @@ class HistoryAdmin(admin.ModelAdmin):
             return False  
         return True# disable the button if Vision exists
 
+
+@admin.register(Mission)
+class MissionAdmin(admin.ModelAdmin):
+    list_display = ['title','last_update']
     
+    def has_add_permission(self, request, obj=None):
+        if Mission.objects.exists():
+            return False  
+        return True# disable the button if Vision exists
+
+
 
 
     

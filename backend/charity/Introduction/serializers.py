@@ -2,7 +2,7 @@
 
 from rest_framework import serializers
 
-from .models import Vision,History
+from .models import Vision,History,Mission
 
 
 class VisionSerializer(serializers.ModelSerializer):
@@ -15,6 +15,14 @@ class VisionSerializer(serializers.ModelSerializer):
 class HistorySerializer(serializers.ModelSerializer):    
     class Meta:
         model = History
+        fields = ('title','avatar','text')
+
+
+
+class MissionSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Mission
         fields = ('title','avatar','text')
 
 
