@@ -4,7 +4,7 @@ from rest_framework import serializers
 
 from .models import (
     Vision,History,Mission,Chart,
-    Statute
+    Statute,Values
 )
 
 class VisionSerializer(serializers.ModelSerializer):
@@ -42,6 +42,15 @@ class StatuteSerializer(serializers.ModelSerializer):
         fields = ('title','text','file')
 
 
+
+class ValuesSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Values
+        fields = ('title','text')
+
+
+        
 
 
 

@@ -141,3 +141,27 @@ class Statute(models.Model):
         pass
 
 
+
+class Values(models.Model):
+    title = models.CharField(max_length=50)
+    text = models.TextField()
+    last_update = models.DateTimeField('last update',auto_now=True)
+
+    class Meta:
+        db_table = 'Values'
+        verbose_name = 'Values'
+        verbose_name_plural = 'Values'
+
+
+    objects = SingletonModelManager()
+
+    def save(self, *args, **kwargs):
+        if Values.objects.exists() and not self.pk:
+            self.pk = 1
+        super().save(*args, **kwargs)
+    
+
+    def delete(self, *args, **kwargs):
+        # Prevent deletion of the only instance
+        pass
+

@@ -2,7 +2,7 @@ from django.contrib import admin
 
 from .models import (
     Vision,History,Mission,Chart,
-    Statute
+    Statute,Values
 )
 
 @admin.register(Vision)
@@ -57,7 +57,17 @@ class ChartAdmin(admin.ModelAdmin):
 
 
 
+@admin.register(Values)
+class ChartAdmin(admin.ModelAdmin):
+    list_display = ['title','last_update']
     
+    def has_add_permission(self, request, obj=None):
+        if Values.objects.exists():
+            return False  
+        return True# disable the button if Vision exists
+    
+
+
 
 
 
