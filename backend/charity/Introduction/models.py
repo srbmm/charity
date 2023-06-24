@@ -70,7 +70,7 @@ class Mission(models.Model):
     text = models.TextField()
     avatar = models.ImageField(blank=True,upload_to='Introduction/')
     last_update = models.DateTimeField('last update',auto_now=True)
-    
+
 
 
     class Meta:
@@ -93,3 +93,23 @@ class Mission(models.Model):
 
 
 
+class Chart(models.Model):
+    title = models.CharField(max_length=50,default='Chart')
+    file = models.FileField(upload_to='Introduction/')
+
+    class Meta:
+        db_table = 'Chart'
+        verbose_name = 'Chart'
+        verbose_name_plural = 'Chart'
+    
+    objects = SingletonModelManager()
+
+    def save(self, *args, **kwargs):
+        if Chart.objects.exists() and not self.pk:
+            self.pk = 1
+        super().save(*args, **kwargs)
+    
+
+    def delete(self, *args, **kwargs):
+        # Prevent deletion of the only instance
+        pass

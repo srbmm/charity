@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Vision,History,Mission
+from .models import Vision,History,Mission,Chart
 
 
 @admin.register(Vision)
@@ -29,6 +29,17 @@ class MissionAdmin(admin.ModelAdmin):
     
     def has_add_permission(self, request, obj=None):
         if Mission.objects.exists():
+            return False  
+        return True# disable the button if Vision exists
+
+
+@admin.register(Chart)
+class ChartAdmin(admin.ModelAdmin):
+    list_display = ['title']
+    exclude = ['title']
+    
+    def has_add_permission(self, request, obj=None):
+        if Chart.objects.exists():
             return False  
         return True# disable the button if Vision exists
 

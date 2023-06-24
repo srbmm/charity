@@ -2,7 +2,7 @@
 
 from rest_framework import serializers
 
-from .models import Vision,History,Mission
+from .models import Vision,History,Mission,Chart
 
 
 class VisionSerializer(serializers.ModelSerializer):
@@ -26,6 +26,11 @@ class MissionSerializer(serializers.ModelSerializer):
         fields = ('title','avatar','text')
 
 
+class ChartSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Chart
+        fields = ('title','file')
 
 
 

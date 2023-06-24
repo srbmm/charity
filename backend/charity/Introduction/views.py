@@ -3,9 +3,10 @@ from rest_framework.response import Response
 from rest_framework import status
 
 
-from .models import Vision,History,Mission
+from .models import Vision,History,Mission,Chart
 from .serializers import (
-    VisionSerializer , HistorySerializer,MissionSerializer
+    VisionSerializer , HistorySerializer,MissionSerializer,
+    ChartSerializer
 )
 
 
@@ -36,4 +37,14 @@ class MissionView(APIView):
         serializer = MissionSerializer(mission,context = {'request':request})
         return Response(serializer.data,status=status.HTTP_200_OK)
     
+
+
+class ChartView(APIView):
+
+    def get(self,request):
+        chart = Chart.objects.all().first()
+        serializer = ChartSerializer(chart,context = {'request':request})
+        return Response(serializer.data,status=status.HTTP_200_OK)
+    
+
 
