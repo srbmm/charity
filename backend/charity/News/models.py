@@ -3,10 +3,6 @@ from django.db import models
 
 
 
-
-
-
-
 class News(models.Model):
     title = models.CharField(max_length=50)
     avatar = models.ImageField(blank=True,upload_to='News/')
@@ -21,4 +17,3 @@ class News(models.Model):
         db_table = 'News'
         verbose_name = 'News'
         verbose_name_plural = 'News' 
-

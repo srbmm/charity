@@ -9,8 +9,20 @@ class VisionAdmin(admin.ModelAdmin):
     list_display = ['title','last_update']
     
     def has_add_permission(self, request, obj=None):
-        # Disable the 'Add' button
-        return False
+        if Vision.objects.exists():
+            return False  
+        return True# disable the button if Vision exists
+        
+
+
+
+    
+
+
+    
+
+
+
     
 
 
