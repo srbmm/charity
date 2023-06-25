@@ -232,3 +232,16 @@ class Performance(models.Model):
 
 
     
+class Faq(models.Model):
+    question = models.TextField()
+    answer = models.TextField()
+    last_update = models.DateTimeField('last update',auto_now=True)
+
+
+    class Meta:
+        db_table = 'Faq'
+        verbose_name = 'Faq'
+        verbose_name_plural = 'Faq'
+
+
+

@@ -5,7 +5,7 @@ from django.urls import path
 from .views import (
     VisionView,HistoryView,MissionView,ChartView,
     StatuteView,ValuesView,PermissionsView,FinancialView,
-    PerformanceView,AuditView
+    PerformanceView,AuditView,FaqView
 )
 
 urlpatterns = [
@@ -25,9 +25,17 @@ urlpatterns = [
     path('reports/audit',AuditView.as_view(),name='audit'),          
     path('reports/performance',PerformanceView.as_view(),name='performance'),
 
+
+
+    # frequently asked questions
+    path('faq/',FaqView.as_view(),name='faq'),
     
-         
+
+
+
+
 ]
+
 
 
 

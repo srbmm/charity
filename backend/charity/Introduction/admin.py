@@ -3,7 +3,7 @@ from django.contrib import admin
 from .models import (
     Vision,History,Mission,Chart,
     Statute,Values,Permissions,Financial,
-    Audit,Performance
+    Audit,Performance,Faq
 )
 
 @admin.register(Vision)
@@ -97,6 +97,10 @@ class PerformanceAdmin(admin.ModelAdmin):
     list_display = ['title','last_update']
 
 
+
+@admin.register(Faq)
+class FaqAdmin(admin.ModelAdmin):
+    list_display = ['question','last_update']
 
 
 
