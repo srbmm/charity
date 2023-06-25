@@ -47,7 +47,7 @@ class ChartAdmin(admin.ModelAdmin):
 
 
 @admin.register(Statute)
-class ChartAdmin(admin.ModelAdmin):
+class StatuteAdmin(admin.ModelAdmin):
     list_display = ['title','last_update']
     
     def has_add_permission(self, request, obj=None):
@@ -58,7 +58,7 @@ class ChartAdmin(admin.ModelAdmin):
 
 
 @admin.register(Values)
-class ChartAdmin(admin.ModelAdmin):
+class ValuesAdmin(admin.ModelAdmin):
     list_display = ['title','last_update']
     
     def has_add_permission(self, request, obj=None):
@@ -68,9 +68,11 @@ class ChartAdmin(admin.ModelAdmin):
     
 
 @admin.register(Permissions)
-class ChartAdmin(admin.ModelAdmin):
+class PermissionsAdmin(admin.ModelAdmin):
     list_display = ['title','last_update']
-    
+
+
+
 
 
 

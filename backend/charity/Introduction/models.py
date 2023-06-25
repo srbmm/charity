@@ -177,5 +177,3 @@ class Permissions(models.Model):
         db_table = 'Permissions'
         verbose_name = 'Permissions'
         verbose_name_plural = 'Permissions'
-
-    
