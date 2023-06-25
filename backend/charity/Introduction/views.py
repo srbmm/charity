@@ -5,13 +5,15 @@ from rest_framework import status
 
 from .models import (
     Vision,History,Mission,Chart,Statute,
-    Values,Permissions
+    Values,Permissions,Financial,
+    Audit,Performance
 )
 
 from .serializers import (
     VisionSerializer , HistorySerializer,MissionSerializer,
     ChartSerializer,StatuteSerializer,ValuesSerializer,
-    PermissionsSerializer
+    PermissionsSerializer,FinancialSerializer,
+    AuditSerializer,PerformanceSerializer
 )
 
 
@@ -77,6 +79,36 @@ class PermissionsView(APIView):
         serializer = PermissionsSerializer(permissions,many=True,context = {'request':request})
         return Response(serializer.data,status=status.HTTP_200_OK)
     
+
+class FinancialView(APIView):
+
+    def get(self,request):
+        financial= Financial.objects.all()
+        serializer = FinancialSerializer(financial,many=True,context = {'request':request})
+        return Response(serializer.data,status=status.HTTP_200_OK)
+    
+
+
+class AuditView(APIView):
+
+    def get(self,request):
+        audit = Audit.objects.all()
+        serializer = AuditSerializer(audit,many=True,context = {'request':request})
+        return Response(serializer.data,status=status.HTTP_200_OK)
+    
+
+
+class PerformanceView(APIView):
+
+    def get(self,request):
+        performance = Performance.objects.all()
+        serializer = PerformanceSerializer(performance,many=True,context = {'request':request})
+        return Response(serializer.data,status=status.HTTP_200_OK)
+    
+
+        
+
+
 
 
 

@@ -2,7 +2,8 @@ from django.contrib import admin
 
 from .models import (
     Vision,History,Mission,Chart,
-    Statute,Values,Permissions
+    Statute,Values,Permissions,Financial,
+    Audit,Performance
 )
 
 @admin.register(Vision)
@@ -70,6 +71,32 @@ class ValuesAdmin(admin.ModelAdmin):
 @admin.register(Permissions)
 class PermissionsAdmin(admin.ModelAdmin):
     list_display = ['title','last_update']
+
+
+
+
+@admin.register(Financial)
+class FinancialAdmin(admin.ModelAdmin):
+    list_display = ['title','last_update']
+
+    '''
+    def has_add_permission(self, request, obj=None):
+        if Values.objects.exists():
+            return False  
+        return True# disable the button if Vision exists
+    '''
+
+@admin.register(Audit)
+class AuditAdmin(admin.ModelAdmin):
+    list_display = ['title','last_update']
+
+
+
+@admin.register(Performance)
+class PerformanceAdmin(admin.ModelAdmin):
+    list_display = ['title','last_update']
+
+
 
 
 

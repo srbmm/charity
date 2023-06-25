@@ -4,7 +4,8 @@ from rest_framework import serializers
 
 from .models import (
     Vision,History,Mission,Chart,
-    Statute,Values,Permissions
+    Statute,Values,Permissions,Financial,
+    Audit,Performance
 )
 
 class VisionSerializer(serializers.ModelSerializer):
@@ -55,6 +56,29 @@ class PermissionsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Permissions
         fields = ('title','file')
+
+
+
+class FinancialSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Financial
+        fields = ('title','file')
+
+
+
+class AuditSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Audit
+        fields = ('title','file')
+
+
+
+class PerformanceSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Performance
+        fields = ('title','file')
+
 
 
 

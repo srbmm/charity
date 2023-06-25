@@ -177,3 +177,58 @@ class Permissions(models.Model):
         db_table = 'Permissions'
         verbose_name = 'Permissions'
         verbose_name_plural = 'Permissions'
+
+
+class Financial(models.Model):
+    title = models.CharField(max_length=50,default='financial')
+    file = models.FileField(upload_to='Introduction/')
+    last_update = models.DateTimeField('last update',auto_now=True)
+
+
+    class Meta:
+        db_table = 'Financial'
+        verbose_name = 'Financial'
+        verbose_name_plural = 'Financial'
+
+    # if it needs to be one
+    """
+    objects = SingletonModelManager()
+
+    def save(self, *args, **kwargs):
+        if Financial.objects.exists() and not self.pk:
+            self.pk = 1
+        super().save(*args, **kwargs)
+    
+
+    def delete(self, *args, **kwargs):
+        # Prevent deletion of the only instance
+        pass
+    """
+
+
+class Audit(models.Model):
+    title = models.CharField(max_length=50,default='audit')
+    file = models.FileField(upload_to='Introduction/')
+    last_update = models.DateTimeField('last update',auto_now=True)
+
+
+    class Meta:
+        db_table = 'Audit'
+        verbose_name = 'Audit'
+        verbose_name_plural = 'Audit'
+
+
+
+class Performance(models.Model):
+    title = models.CharField(max_length=50,default='performance')
+    file = models.FileField(upload_to='Introduction/')
+    last_update = models.DateTimeField('last update',auto_now=True)
+
+
+    class Meta:
+        db_table = 'Performance'
+        verbose_name = 'Performance'
+        verbose_name_plural = 'Performance'
+
+
+    
