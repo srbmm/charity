@@ -3,15 +3,17 @@ import {ReactNode} from "../../types";
 import Header from "./Header";
 import Footer from "./Footer";
 
-const HeaderAndFooter:React.FC<{
+const HeaderAndFooter: React.FC<{
     children: ReactNode
 }> = ({children}) => {
     return (
-        <>
-            <Header />
-            {children}
-            <Footer />
-        </>
+        <div className="flex flex-col h-screen justify-between">
+            <Header/>
+            <div>
+                {children}
+            </div>
+            <Footer/>
+        </div>
     );
 };
 

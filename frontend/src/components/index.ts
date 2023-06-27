@@ -5,5 +5,6 @@ import Theme from "./Theme";
 import BreadCrumb from "./BreadCrumb";
 import ErrorBoundary from "./ErrorBoundary";
 import Loading from "./Loading";
+import ProfileCard from "./ProfileCard";
 
-export {Header, Theme, HeaderAndFooter, Footer, Loading, BreadCrumb, ErrorBoundary}
+export {Header, Theme, HeaderAndFooter, Footer, Loading, BreadCrumb, ErrorBoundary, ProfileCard}

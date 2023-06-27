@@ -1,10 +1,12 @@
 import React from 'react';
 import {HeaderAndFooter} from "../components";
 
-const NotFound:React.FC = () => {
+const NotFound: React.FC = () => {
     return (
         <HeaderAndFooter>
-            صفحه پیدا نشد
+            <div className="text-center m-56">
+                صفحه پیدا نشد
+            </div>
         </HeaderAndFooter>
     );
 };
