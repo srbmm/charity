@@ -31,6 +31,7 @@ INSTALLED_APPS = [
 
     'News',
     'Introduction',
+    "Members",
 
     'rest_framework',
 

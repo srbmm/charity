@@ -30,10 +30,6 @@ urlpatterns = [
     # frequently asked questions
     path('faq/',FaqView.as_view(),name='faq'),
     
-
-
-
-
 ]
 
 
