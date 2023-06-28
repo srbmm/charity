@@ -9,6 +9,7 @@ class PreviousBoard(models.Model):
     full_name = models.CharField(max_length=255,unique=True)
     avatar = models.ImageField(blank=True,upload_to='Members/')
     biography = models.CharField(max_length=50)
+    created_date = models.DateTimeField('created date',auto_now_add=True)
 
 
     class Meta:
@@ -23,7 +24,7 @@ class CurrentBoard(models.Model):
     full_name = models.CharField(max_length=255,unique=True)
     avatar = models.ImageField(blank=True,upload_to='Members/')
     biography = models.CharField(max_length=50)
-
+    created_date = models.DateTimeField('created date',auto_now_add=True)
 
     class Meta:
         db_table = 'CurrentBoard'
@@ -37,6 +38,7 @@ class Founders(models.Model):
     full_name = models.CharField(max_length=255,unique=True)
     avatar = models.ImageField(blank=True,upload_to='Members/')
     biography = models.CharField(max_length=50)
+    created_date = models.DateTimeField('created date',auto_now_add=True)
 
 
     class Meta:
@@ -51,6 +53,7 @@ class Trustees(models.Model):
     full_name = models.CharField(max_length=255,unique=True)
     avatar = models.ImageField(blank=True,upload_to='Members/')
     biography = models.CharField(max_length=50)
+    created_date = models.DateTimeField('created date',auto_now_add=True)
 
 
     class Meta:
@@ -65,6 +68,7 @@ class Inspectors(models.Model):
     full_name = models.CharField(max_length=255,unique=True)
     avatar = models.ImageField(blank=True,upload_to='Members/')
     biography = models.CharField(max_length=50)
+    created_date = models.DateTimeField('created date',auto_now_add=True)
 
 
     class Meta:
@@ -81,6 +85,7 @@ class Members(models.Model):
     full_name = models.CharField(max_length=255,unique=True)
     avatar = models.ImageField(blank=True,upload_to='Members/')
     biography = models.CharField(max_length=50)
+    created_date = models.DateTimeField('created date',auto_now_add=True)
 
 
     class Meta:

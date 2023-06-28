@@ -13,3 +13,4 @@ class NewsAdmin(admin.ModelAdmin):
     list_display = ['title','created_date','summary','seen_count']
     list_filter = ['seen_count','created_date']
     search_fields = ['title']
+
