@@ -6,6 +6,7 @@ const Theme: React.FC = ({children, className}) => {
     let href = useHref("")
     if (href !== "/")
         href = href.split("/").at(-1)
+    console.log(href)
     const title = Object.values(PAGES).find(({url}) => url === href)
 
     return (

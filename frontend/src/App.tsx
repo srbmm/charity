@@ -8,7 +8,7 @@ import {Root, NotFound,
 
     Vision, History, Chart, Missions, Statute, Introductions, Values, Licenses,
     PreviousBoardMembers, CurrentBoardMembers, MembersOfTheBoardOfTrustees, MembersOfTheFoundingBoard, Investigators, MembersOfTheGeneralAssembly,
-    FinancialStatements, OneFinancialStatement, AuditReport, OneAuditReport, PerformanceReports, OnePerformanceReport,
+    FinancialStatements, AuditReport, PerformanceReports,
     Employees, OneEmployee,
     FrequentlyAskedQuestions,
 
@@ -93,26 +93,13 @@ const router = createBrowserRouter(
             element: <FinancialStatements />
         },
         {
-            path: PAGES.get_to_know.url + '/' + PAGES.reports.url + '/' +  PAGES.financialStatements.url + '/' + PAGES.id.url,
-            element: <OneFinancialStatement />
-        },
-        {
             path: PAGES.get_to_know.url + '/' + PAGES.reports.url + '/' +  PAGES.auditReport.url,
             element: <AuditReport />
-        },
-        {
-            path: PAGES.get_to_know.url + '/' + PAGES.reports.url + '/' +  PAGES.auditReport.url + '/' + PAGES.id.url,
-            element: <OneAuditReport />
         },
         {
             path: PAGES.get_to_know.url + '/' + PAGES.reports.url + '/' +  PAGES.performanceReports.url,
             element: <PerformanceReports />
         },
-        {
-            path: PAGES.get_to_know.url + '/' + PAGES.reports.url + '/' +  PAGES.performanceReports.url + '/' + PAGES.id.url,
-            element: <OnePerformanceReport />
-        },
-
         {
             path: PAGES.get_to_know.url + '/' + PAGES.employees.url,
             element: <Employees />

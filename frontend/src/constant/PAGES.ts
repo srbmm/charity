@@ -12,7 +12,7 @@ const PAGES = {
             "chart": {url: "chart", label: "چارت سازمانی"},
             "mission":{url: "mission", label: "ماموریت"},
             "statute":{url: "statute", label: "اساسنامه"},
-            "introduction":{url: "introduction", label: "مفرفی"},
+            "introduction":{url: "introduction", label: "معرفی"},
             "values":{url: "values", label: "ارزش ها"},
             "licenses":{url: "licenses", label: "مجوز ها"},
 
@@ -25,9 +25,9 @@ const PAGES = {
             "members_of_the_general_assembly": {url: "members_of_the_general_assembly", label: "بازرسان"},
 
         "reports": {url: "reports", label: "گزارش ها"},
-            "financialStatements": {url: "financial−statements", label: "صورت های مالی"},
-            "auditReport": {url: "audit-report", label: "گزارش های حسابرسی"},
-            "performanceReports": {url: "performance−reports", label: "گزارش های عملکردی"},
+            "financialStatements": {url: "financial_statements", label: "صورت های مالی"},
+            "auditReport": {url: "audit_report", label: "گزارش های حسابرسی"},
+            "performanceReports": {url: "performance_reports", label: "گزارش های عملکردی"},
 
         "employees": {url: "employees", label: "همکاران بنیاد"},
 

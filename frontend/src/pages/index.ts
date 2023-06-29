@@ -18,11 +18,8 @@ import Investigators from "./getToKnow/components/Investigators";
 import MembersOfTheGeneralAssembly from "./getToKnow/components/MembersOfTheGeneralAssembly";
 
 import FinancialStatements from "./getToKnow/reports/financialStatements/FinancialStatements";
-import OneFinancialStatement from "./getToKnow/reports/financialStatements/OneFinancialStatement";
 import AuditReport from "./getToKnow/reports/auditReport/AuditReport";
-import OneAuditReport from "./getToKnow/reports/auditReport/OneAuditReport";
 import PerformanceReports from "./getToKnow/reports/performanceReports/PerformanceReports";
-import OnePerformanceReport from "./getToKnow/reports/performanceReports/OnePerformanceReport";
 
 import Employees from "./getToKnow/Employees/Employees";
 import OneEmployee from "./getToKnow/Employees/OneEmployee";
@@ -56,7 +53,7 @@ export {Root, NotFound,
 
     Vision, History, Chart, Missions, Statute, Introductions, Values, Licenses,
     PreviousBoardMembers, CurrentBoardMembers, MembersOfTheBoardOfTrustees, MembersOfTheFoundingBoard, Investigators, MembersOfTheGeneralAssembly,
-    FinancialStatements, OneFinancialStatement, AuditReport, OneAuditReport, PerformanceReports, OnePerformanceReport,
+    FinancialStatements, AuditReport, PerformanceReports,
     Employees, OneEmployee,
     FrequentlyAskedQuestions,
 

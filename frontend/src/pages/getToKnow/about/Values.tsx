@@ -1,5 +1,4 @@
 import React from 'react';
-import {Box} from "@mui/material";
 import {Loading, Theme} from "../../../components";
 import useGetData from "../../../hook/useGetData";
 import getIntroduction from "../../../data/Introduction";
