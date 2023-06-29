@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     "Members",
 
     'rest_framework',
+    'corsheaders',
 
 ]
 

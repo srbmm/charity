@@ -5,6 +5,7 @@
 # django 
 django
 djangorestframework
+django-cors-headers
 
 
 
