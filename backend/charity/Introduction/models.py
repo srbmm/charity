@@ -1,3 +1,4 @@
+from typing import Iterable, Optional
 from django.db import models
 
 # Create your models here.
@@ -179,6 +180,8 @@ class Permissions(models.Model):
         verbose_name_plural = 'Permissions'
 
 
+
+
 class Financial(models.Model):
     title = models.CharField(max_length=50,default='financial')
     file = models.FileField(upload_to='Introduction/')
@@ -191,7 +194,6 @@ class Financial(models.Model):
         verbose_name_plural = 'Financial'
 
     # if it needs to be one
-    """
     objects = SingletonModelManager()
 
     def save(self, *args, **kwargs):
@@ -203,14 +205,45 @@ class Financial(models.Model):
     def delete(self, *args, **kwargs):
         # Prevent deletion of the only instance
         pass
-    """
+    
 
 
 class Audit(models.Model):
-    title = models.CharField(max_length=50,default='audit')
+
+    YEAR_CHOICES = [
+        ('1394','سال ۱۳۹۴'),
+        ('1395','سال ۱۳۹۵'),
+        ('1396','سال ۱۳۹۶'),
+        ('1397','سال ۱۳۹۷'),
+        ('1398','سال ۱۳۹۸'),
+        ('1399','سال ۱۳۹۹'),
+        ('1400','سال ۱۴۰۰'),
+        ('1401','سال ۱۴۰۱'),
+        ('1402','سال ۱۴۰۲'),
+        ('1403','سال ۱۴۰۳'),
+        ('1404','سال ۱۴۰۴'),
+        ('1405','سال ۱۴۰۵'),
+        ('1406','سال ۱۴۰۶'),
+        ('1407','سال ۱۴۰۷'),
+    ]
+
+    year = models.CharField(max_length=20,choices= YEAR_CHOICES)
     file = models.FileField(upload_to='Introduction/')
     last_update = models.DateTimeField('last update',auto_now=True)
 
+
+    @property
+    def title(self):
+        return f'{self.year} گزارش حسابرسی در سال'
+    
+
+    def save(self, *args, **kwargs):
+        temp = Audit.objects.filter(year = self.year)
+        if temp:
+            return
+        super().save(*args, **kwargs)
+
+            
 
     class Meta:
         db_table = 'Audit'
@@ -220,9 +253,40 @@ class Audit(models.Model):
 
 
 class Performance(models.Model):
-    title = models.CharField(max_length=50,default='performance')
+
+
+    YEAR_CHOICES = [
+        ('1394','سال ۱۳۹۴'),
+        ('1395','سال ۱۳۹۵'),
+        ('1396','سال ۱۳۹۶'),
+        ('1397','سال ۱۳۹۷'),
+        ('1398','سال ۱۳۹۸'),
+        ('1399','سال ۱۳۹۹'),
+        ('1400','سال ۱۴۰۰'),
+        ('1401','سال ۱۴۰۱'),
+        ('1402','سال ۱۴۰۲'),
+        ('1403','سال ۱۴۰۳'),
+        ('1404','سال ۱۴۰۴'),
+        ('1405','سال ۱۴۰۵'),
+        ('1406','سال ۱۴۰۶'),
+        ('1407','سال ۱۴۰۷'),
+    ]
+
+    year = models.CharField(max_length=20,choices= YEAR_CHOICES)
     file = models.FileField(upload_to='Introduction/')
     last_update = models.DateTimeField('last update',auto_now=True)
+
+
+    @property
+    def title(self):
+        return f'{self.year} گزارش عملکردی در سال'
+    
+
+    def save(self, *args, **kwargs):
+        temp = Performance.objects.filter(year = self.year)
+        if temp:
+            return
+        super().save(*args, **kwargs)
 
 
     class Meta:
@@ -232,6 +296,9 @@ class Performance(models.Model):
 
 
     
+
+
+
 class Faq(models.Model):
     question = models.TextField()
     answer = models.TextField()
