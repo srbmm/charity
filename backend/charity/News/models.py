@@ -10,6 +10,7 @@ class News(models.Model):
     created_date = models.DateTimeField('created date',auto_now_add=True)
     summary = models.TextField(blank=True)
     seen_count = models.IntegerField(default=0)
+    is_selected = models.BooleanField(default=False)
 
 
 

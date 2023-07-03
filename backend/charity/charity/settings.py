@@ -25,9 +25,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    'News',
+    
     'Introduction',
     "Members",
+
+    'News.apps.NewsConfig',
 
     'rest_framework',
     'corsheaders',
