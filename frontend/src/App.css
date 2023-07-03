@@ -7,14 +7,12 @@ body {
 }
 @font-face {
     font-family: Sahel;
-    src: url('./src/assets/fonts/sahel/Sahel-Bold.woff2') format('woff2'),
-    url('./src/assets/fonts/sahel/Sahel-Bold.ttf') format('truetype');
+    src: url('./src/assets/fonts/sahel/Sahel-Bold.woff2') format('woff2');
     font-weight: bold;
 }
 @font-face {
     font-family: Vazir;
-    src: url('./src/assets/fonts/vazir/Vazirmatn-Regular.woff2') format('woff2'),
-    url('./src/assets/fonts/vazir/Vazirmatn-Regular.ttf') format('truetype');
+    src: url('./src/assets/fonts/vazir/Vazirmatn-Regular.woff2') format('woff2');
     font-weight: normal;
 }
 

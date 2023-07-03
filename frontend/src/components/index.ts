@@ -6,5 +6,6 @@ import BreadCrumb from "./BreadCrumb";
 import ErrorBoundary from "./ErrorBoundary";
 import Loading from "./Loading";
 import ProfileCard from "./ProfileCard";
-
-export {Header, Theme, HeaderAndFooter, Footer, Loading, BreadCrumb, ErrorBoundary, ProfileCard}
+import NewsSlider from "./NewsSlider";
+import PhoneNewsSlider from "./PhoneNewsSlider";
+export {Header, Theme, HeaderAndFooter, Footer, Loading, BreadCrumb, ErrorBoundary, ProfileCard, NewsSlider, PhoneNewsSlider}
