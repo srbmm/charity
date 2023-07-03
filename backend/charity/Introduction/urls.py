@@ -5,7 +5,7 @@ from django.urls import path
 from .views import (
     VisionView,HistoryView,MissionView,ChartView,
     StatuteView,ValuesView,PermissionsView,FinancialView,
-    PerformanceView,AuditView,FaqView
+    PerformanceView,AuditView,FaqView,PartnersView
 )
 
 urlpatterns = [
@@ -33,7 +33,8 @@ urlpatterns = [
 
 
     # members 
-    #path('Partners/'),
+    path('partners/',PartnersView.as_view(),name='partners'),
+
 
     
 ]

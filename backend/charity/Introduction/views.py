@@ -6,14 +6,15 @@ from rest_framework import status
 from .models import (
     Vision,History,Mission,Chart,Statute,
     Values,Permissions,Financial,
-    Audit,Performance,Faq
+    Audit,Performance,Faq,Partners
 )
 
 from .serializers import (
     VisionSerializer , HistorySerializer,MissionSerializer,
     ChartSerializer,StatuteSerializer,ValuesSerializer,
     PermissionsSerializer,FinancialSerializer,
-    AuditSerializer,PerformanceSerializer,FaqSerializer
+    AuditSerializer,PerformanceSerializer,FaqSerializer,
+    PartnersSerializer
 )
 
 
@@ -118,8 +119,12 @@ class FaqView(APIView):
 
 
 
+class PartnersView(APIView):
 
 
-
+    def get(self,request):
+        partners = Partners.objects.all()
+        serializer = PartnersSerializer(partners,many=True,context = {'request':request})
+        return Response(serializer.data,status=status.HTTP_200_OK)
 
 

@@ -5,7 +5,7 @@ from rest_framework import serializers
 from .models import (
     Vision,History,Mission,Chart,
     Statute,Values,Permissions,Financial,
-    Audit,Performance,Faq
+    Audit,Performance,Faq,Partners
 )
 
 class VisionSerializer(serializers.ModelSerializer):
@@ -88,6 +88,19 @@ class FaqSerializer(serializers.ModelSerializer):
 
 
 
+
+class PartnersSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = Partners
+        fields = (
+                    'full_name','avatar','post','biography','phone_number',
+                    'email','category'
+                )
+        
+
+
+        
 
 
 

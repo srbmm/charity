@@ -266,12 +266,17 @@ class Partners(models.Model):
     phone_number = models.BigIntegerField()
     email = models.EmailField(blank=True,null=True)
     category = models.CharField(max_length=30 , choices= CATEGORY_CHOICES)
+    created_date = models.DateTimeField('created date',auto_now_add=True)
+
+
 
 
     class Meta:
         db_table = 'Partners'
         verbose_name = 'Partners'
         verbose_name_plural = 'Partners'
+
+
 
 
 
