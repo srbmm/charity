@@ -1,4 +1,3 @@
-from django.shortcuts import render
 
 
 
@@ -11,7 +10,15 @@ from rest_framework import status
 from .models import News
 from .serializers import NewsSerializer
 
-from django.db.models import Q
+
+class SelectedNewsView(APIView):
+
+    def get(self,request):
+        selected_news = News.objects.filter(is_selected = True)
+        count = selected_news.count()
+
+        serializer = NewsSerializer(selected_news,many=True,context = {'request':request})
+        return Response({'News_count':count,'News':serializer.data} , status=status.HTTP_200_OK)
 
 
 

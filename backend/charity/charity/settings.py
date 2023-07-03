@@ -36,6 +36,8 @@ INSTALLED_APPS = [
 
 ]
 
+
+
 MIDDLEWARE = [
     'corsheaders.middleware.CorsMiddleware',
     'django.middleware.security.SecurityMiddleware',
@@ -47,7 +49,11 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
 
+
+
 ROOT_URLCONF = 'charity.urls'
+
+
 
 TEMPLATES = [
     {
@@ -64,6 +70,8 @@ TEMPLATES = [
         },
     },
 ]
+
+
 
 WSGI_APPLICATION = 'charity.wsgi.application'
 
