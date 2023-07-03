@@ -9,8 +9,7 @@ from rest_framework import status
 
 from .models import SupportTopics
 
-from .serializers import SupportTopicsSerializer
-
+from .serializers import SupportTopicsSerializer,SingleSupportTopicsSerializer
 
 
 
@@ -45,4 +44,11 @@ class SupportTopicsListView(APIView):
 class SupportTopicsDetailView(APIView):
 
     def get(self,request,pk):
-        pass
+        try:
+            the_object = SupportTopics.objects.get(pk = pk)
+        except SupportTopics.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+
+        serializer = SingleSupportTopicsSerializer(the_object,context = {'request':request})
+        return Response(serializer.data,status=status.HTTP_200_OK)
+    

@@ -13,7 +13,18 @@ class SupportTopicsSerializer(serializers.ModelSerializer):
             'id',
             'topic','title',
             'avatar','budget',
-            'description','progress'
+            'progress'
         )
 
 
+class SingleSupportTopicsSerializer(serializers.ModelSerializer):
+
+
+    class Meta:
+        model = SupportTopics
+        fields = (
+            'id',
+            'topic','title',
+            'avatar','budget',
+            'description','progress'
+        )
