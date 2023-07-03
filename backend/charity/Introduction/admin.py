@@ -3,7 +3,7 @@ from django.contrib import admin
 from .models import (
     Vision,History,Mission,Chart,
     Statute,Values,Permissions,Financial,
-    Audit,Performance,Faq
+    Audit,Performance,Faq,Partners
 )
 
 @admin.register(Vision)
@@ -105,7 +105,10 @@ class FaqAdmin(admin.ModelAdmin):
 
 
 
-
+@admin.register(Partners)
+class PartnersAdmin(admin.ModelAdmin):
+    list_display = ['full_name','post','category']
+    list_filter = ['category']
 
 
 

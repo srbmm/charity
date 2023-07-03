@@ -236,12 +236,45 @@ class Faq(models.Model):
     question = models.TextField()
     answer = models.TextField()
     last_update = models.DateTimeField('last update',auto_now=True)
+    phone_number = models.BigIntegerField()
+    email = models.EmailField()
 
 
     class Meta:
         db_table = 'Faq'
         verbose_name = 'Faq'
         verbose_name_plural = 'Faq'
+
+
+
+
+
+class Partners(models.Model):
+
+    CATEGORY_CHOICES = [
+        ('Information Technology','فناوری اطلاعات'),
+        ('Accountants','حسابدار'),
+        ('auditor','حسابرس'),
+        ('Financial','مالی'),
+        ('Communication','ارتباط با دانشجویان')
+    ]
+
+    full_name = models.CharField(max_length=255)
+    avatar = models.ImageField(blank=True,upload_to='Introduction/')
+    post = models.CharField(max_length=30)
+    biography = models.CharField(max_length=255)
+    phone_number = models.BigIntegerField()
+    email = models.EmailField(blank=True,null=True)
+    category = models.CharField(max_length=30 , choices= CATEGORY_CHOICES)
+
+
+    class Meta:
+        db_table = 'Partners'
+        verbose_name = 'Partners'
+        verbose_name_plural = 'Partners'
+
+
+
 
 
 
