@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class ProjectsConfig(AppConfig):
+class SupportTopicsConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'Projects'
+    name = 'SupportTopics'

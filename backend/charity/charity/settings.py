@@ -29,7 +29,7 @@ INSTALLED_APPS = [
     
     'Introduction',
     "Members",
-    'Projects',
+    'SupportTopics',
     'Supporters',
     'News.apps.NewsConfig',
 

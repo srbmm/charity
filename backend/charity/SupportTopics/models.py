@@ -21,7 +21,7 @@ class SupportTopics(models.Model):
 
     topic = models.CharField(max_length=20,choices=TOPICS_CHOICES)
     title = models.CharField(max_length=50)
-    avatar = models.ImageField(blank=True,upload_to='projects/')
+    avatar = models.ImageField(blank=True,upload_to='SupportTopics/')
     budget = models.CharField(max_length=50)
     description = models.TextField()
     progress = models.SmallIntegerField()
