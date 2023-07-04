@@ -32,12 +32,12 @@ INSTALLED_APPS = [
     'SupportTopics',
     'Supporters',
     'News.apps.NewsConfig',
+    'Projects',
 
 
 
     'rest_framework',
     'corsheaders',
-    'multiselectfield',
 
 ]
 
