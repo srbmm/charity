@@ -33,4 +33,9 @@ class SupportTopics(models.Model):
             return
         super().save(*args, **kwargs)
 
-    
+    class Meta:
+        db_table = 'SupportTopics'
+        verbose_name = 'SupportTopics'
+        verbose_name_plural = 'SupportTopics'
+
+ 
