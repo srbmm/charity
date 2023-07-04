@@ -18,6 +18,7 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
@@ -29,8 +30,10 @@ INSTALLED_APPS = [
     'Introduction',
     "Members",
     'Projects',
-
+    'Supporters',
     'News.apps.NewsConfig',
+
+
 
     'rest_framework',
     'corsheaders',
