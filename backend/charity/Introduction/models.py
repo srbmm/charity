@@ -17,7 +17,7 @@ class SingletonModelManager(models.Manager):
 
 
 class Vision(models.Model):
-    title = models.CharField(max_length=50,verbose_name='عنوان')
+    title = models.CharField(max_length=50,verbose_name='عنوان',default='چشم انداز')
     avatar = models.ImageField(blank=True,upload_to='Introduction/',verbose_name='تصویر')
     text = models.TextField(verbose_name='متن')
     last_update = models.DateTimeField(verbose_name='آخرین بروزرسانی',auto_now=True)
@@ -45,7 +45,7 @@ class Vision(models.Model):
 
 
 class History(models.Model):
-    title = models.CharField(max_length=50,verbose_name='عنوان')
+    title = models.CharField(max_length=50,verbose_name='عنوان',default='تاریخچه')
     avatar = models.ImageField(blank=True,upload_to='Introduction/',verbose_name='تصویر')
     text = models.TextField(verbose_name='متن')
     last_update = models.DateTimeField(verbose_name='آخرین بروزرسانی',auto_now=True)
@@ -76,7 +76,7 @@ class History(models.Model):
 
 
 class Mission(models.Model):
-    title = models.CharField(max_length=50,verbose_name='عنوان')
+    title = models.CharField(max_length=50,verbose_name='عنوان',default='مأموریت ها')
     avatar = models.ImageField(blank=True,upload_to='Introduction/',verbose_name='تصویر')
     text = models.TextField(verbose_name='متن')
     last_update = models.DateTimeField(verbose_name='آخرین بروزرسانی',auto_now=True)
@@ -109,7 +109,7 @@ class Mission(models.Model):
 
 
 class Chart(models.Model):
-    title = models.CharField(max_length=50,verbose_name='عنوان')
+    title = models.CharField(max_length=50,verbose_name='عنوان',default='چارت سازمانی')
     file = models.FileField(upload_to='Introduction/',verbose_name='فایل')
     last_update = models.DateTimeField(verbose_name='آخرین بروزرسانی',auto_now=True)
 
@@ -137,7 +137,7 @@ class Chart(models.Model):
 
 
 class Statute(models.Model):
-    title = models.CharField(max_length=50,verbose_name='عنوان')
+    title = models.CharField(max_length=50,verbose_name='عنوان',default='اساسنامه')
     text = models.TextField(verbose_name='متن')
     file = models.FileField(upload_to='Introduction/',verbose_name='فایل')
     last_update = models.DateTimeField(verbose_name='آخرین بروزرسانی',auto_now=True)
@@ -167,7 +167,7 @@ class Statute(models.Model):
 
 
 class Values(models.Model):
-    title = models.CharField(max_length=50,verbose_name='عنوان')
+    title = models.CharField(max_length=50,verbose_name='عنوان',default='ارزش ها')
     text = models.TextField(verbose_name='متن')
     last_update = models.DateTimeField(verbose_name='آخرین بروزرسانی',auto_now=True)
 
