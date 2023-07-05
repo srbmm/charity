@@ -17,7 +17,9 @@ urlpatterns = [
     path("Members/",include("Members.urls")),
     path('SupportTopics/',include('SupportTopics.urls')),
     path('supporters/',include('Supporters.urls')),
-    path('projects/',include('Projects.urls')),
+    path('projects/',include('Project.urls')),
+    
+    
 
 
 ]
@@ -25,3 +27,4 @@ urlpatterns = [
 
 
 urlpatterns += static(settings.MEDIA_URL,document_root = settings.MEDIA_ROOT)
+
