@@ -17,9 +17,6 @@ const Root: React.FC = () => {
     return (
         <>
             <HeaderAndFooter>
-                <div style={{width: "54%"}} className="bg-red-700">
-                    <NewsSlider/>
-                </div>
                 <div className="m-10 md:pr-56 md:pl-56">
                     {/*Main Slider*/}
                     <div><img src={main} className="w-full object-cover h-96"/></div>
@@ -60,10 +57,10 @@ const Root: React.FC = () => {
                     <div className="mt-20">
                         <h1 className="text-2xl text-center">اخبار</h1>
                         <div className="hidden md:block">
-                            <NewsSlider/>
+                            <NewsSlider data={[]}/>
                         </div>
                         <div className="block md:hidden">
-                            <PhoneNewsSlider />
+                            <PhoneNewsSlider  data={[]}/>
                         </div>
                     </div>
                     {/*Hamian*/}

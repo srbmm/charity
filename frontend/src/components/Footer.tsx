@@ -4,8 +4,8 @@ import {Link} from "react-router-dom";
 
 const Footer: React.FC = () => {
     return (
-        <div className="border-t pt-3">
-            <Box sx={{display: "flex", justifyContent: "space-around"}}>
+        <div className="border-t pt-3 bg-[#E5E5E6]">
+            <div className="flex justify-around p-10">
                 <Box sx={{display: "flex", gap: 3}}>
                     <Box sx={{display: 'flex', flexDirection: "column", color: "", gap: 1.5}}>
                         <Link>Link</Link>
@@ -28,8 +28,8 @@ const Footer: React.FC = () => {
                 <Box sx={{display: "flex", alignItems: "center"}}>
                     لوگو
                 </Box>
-            </Box>
-            <div className="bg-black text-gray-400 text-center">copyright 2023©</div>
+            </div>
+            <div className="bg-white text-center">copyright 2023©</div>
         </div>
     );
 };
