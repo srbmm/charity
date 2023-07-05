@@ -7,19 +7,19 @@ from django.db import models
 class Info(models.Model):
     
     title = models.CharField(max_length=50,default='اطلاعات ارتباطی')
-    address = models.TextField()
+    address = models.TextField(verbose_name='آدرس')
 
-    phone_number1 = models.BigIntegerField(blank=False,null=False)
-    phone_number2 = models.BigIntegerField(blank=True,null=True)
-    phone_number3 = models.BigIntegerField(blank=True,null=True)
-    phone_number4 = models.BigIntegerField(blank=True,null=True)
-    phone_number5 = models.BigIntegerField(blank=True,null=True)
+    phone_number1 = models.BigIntegerField(blank=False,null=False,verbose_name='شماره تماس ۱')
+    phone_number2 = models.BigIntegerField(blank=True,null=True,verbose_name='شماره تماس ۲')
+    phone_number3 = models.BigIntegerField(blank=True,null=True,verbose_name='شماره تماس ۳')
+    phone_number4 = models.BigIntegerField(blank=True,null=True,verbose_name='شماره تماس ۴')
+    phone_number5 = models.BigIntegerField(blank=True,null=True,verbose_name='شماره تماس ۵')
 
-    email = models.EmailField()
+    email = models.EmailField(verbose_name='ایمیل')
     
-    whatsapp = models.CharField(max_length=30,blank=True,null=True)
-    telegram = models.CharField(max_length=40,blank=True,null=True)
-    instagram = models.CharField(max_length=50,blank=True,null=True)
+    whatsapp = models.CharField(max_length=30,blank=True,null=True,verbose_name='واتساپ')
+    telegram = models.CharField(max_length=40,blank=True,null=True,verbose_name='تلگرام')
+    instagram = models.CharField(max_length=50,blank=True,null=True,verbose_name='اینستاگرام')
 
 
     def __str__(self) -> str:
@@ -29,8 +29,8 @@ class Info(models.Model):
 
     class Meta:
         db_table = 'Info'
-        verbose_name = 'Info'
-        verbose_name_plural = 'Info'
+        verbose_name = 'راه های ارتباطی'
+        verbose_name_plural = 'راه های ارتباطی'
 
 
     def save(self, *args, **kwargs):
@@ -48,8 +48,8 @@ class Info(models.Model):
 
 class Links(models.Model):
 
-    title = models.CharField(max_length=100)
-    link = models.CharField(max_length=255)
+    title = models.CharField(max_length=100,verbose_name='عنوان')
+    link = models.CharField(max_length=255,verbose_name='لینک')
 
 
     def __str__(self) -> str:
@@ -59,8 +59,10 @@ class Links(models.Model):
 
     class Meta:
         db_table = 'Links'
-        verbose_name = 'Links'
-        verbose_name_plural = 'Links'
+        verbose_name = 'لینک'
+        verbose_name_plural = 'لینک ها'
+
+
 
 
 

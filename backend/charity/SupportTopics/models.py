@@ -19,12 +19,12 @@ class SupportTopics(models.Model):
 
     ]
 
-    topic = models.CharField(max_length=20,choices=TOPICS_CHOICES)
-    title = models.CharField(max_length=50)
-    avatar = models.ImageField(blank=True,upload_to='SupportTopics/')
-    budget = models.CharField(max_length=50)
-    description = models.TextField()
-    progress = models.SmallIntegerField()
+    topic = models.CharField(max_length=20,choices=TOPICS_CHOICES,verbose_name='موضوع')
+    title = models.CharField(max_length=50,verbose_name='عنوان')
+    avatar = models.ImageField(blank=True,upload_to='SupportTopics/',verbose_name='تصویر')
+    budget = models.CharField(max_length=50,verbose_name='بودجه')
+    description = models.TextField(verbose_name='توضیحات')
+    progress = models.SmallIntegerField(verbose_name='درصد پیشرفت')
 
 
 
@@ -35,7 +35,10 @@ class SupportTopics(models.Model):
 
     class Meta:
         db_table = 'SupportTopics'
-        verbose_name = 'SupportTopics'
-        verbose_name_plural = 'SupportTopics'
+        verbose_name = 'موضوع برای حمایت'
+        verbose_name_plural = 'موضوعات برای حمایت'
 
  
+
+    def __str__(self):
+        return f'{self.title}    {self.topic}: موضوع'

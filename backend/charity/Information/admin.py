@@ -23,3 +23,5 @@ class LinksAdmin(admin.ModelAdmin):
 
 
 
+
+

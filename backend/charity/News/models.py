@@ -18,3 +18,8 @@ class News(models.Model):
         db_table = 'News'
         verbose_name = 'خبر'
         verbose_name_plural = 'اخبار' 
+
+
+    def __str__(self):
+        return f'{self.title}'
+    
