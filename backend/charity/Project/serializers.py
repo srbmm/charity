@@ -9,7 +9,18 @@ class ProjectSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Project
-        fields = ('id','avatar','title','budget','description','state')
+        fields = ('id','avatar','title','budget','state')
 
 
 
+
+class SingleProjectSerializer(serializers.ModelSerializer):
+
+
+    class Meta:
+        model = Project
+        fields = (
+            'avatar','title',
+            'budget',
+            'description','state'
+        )
