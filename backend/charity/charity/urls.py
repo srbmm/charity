@@ -18,7 +18,9 @@ urlpatterns = [
     path('SupportTopics/',include('SupportTopics.urls')),
     path('supporters/',include('Supporters.urls')),
     path('projects/',include('Project.urls')),
+    path('Info/',include('Information.urls')),
     
+
     
 
 
