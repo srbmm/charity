@@ -16,10 +16,10 @@ urlpatterns = [
     path('Introduction/',include('Introduction.urls')),
     path("Members/",include("Members.urls")),
     path('SupportTopics/',include('SupportTopics.urls')),
-    path('supporters/',include('Supporters.urls')),
-    path('projects/',include('Project.urls')),
+    path('Supporters/',include('Supporters.urls')),
+    path('Projects/',include('Project.urls')),
     path('Info/',include('Information.urls')),
-    
+
 
     
 
