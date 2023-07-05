@@ -60,7 +60,7 @@ const Root: React.FC = () => {
                             <NewsSlider data={[]}/>
                         </div>
                         <div className="block md:hidden">
-                            <PhoneNewsSlider  data={[]}/>
+                            {/*<PhoneNewsSlider  data={[]}/>*/}
                         </div>
                     </div>
                     {/*Hamian*/}
