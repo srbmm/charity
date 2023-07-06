@@ -1,5 +1,5 @@
 import axios from "axios";
-import {NEWS} from "../constant/API";
+import {NEWS, SELECTED_NEWS} from "../constant/API";
 import {NEWS_PER_PAGE} from "../constant/PER_PAGE";
 
 const getNews = async (page: number, sort = "", reverse = "") => {
@@ -20,4 +20,9 @@ const getAllNewsNumber = async () => {
     }else return 0
 }
 
-export {getAllNewsNumber, getNews, getOneNews}
+const getSelectedNews = async () => {
+    const {data} = await axios.get(SELECTED_NEWS)
+    return data['News']
+}
+
+export {getAllNewsNumber, getNews, getOneNews, getSelectedNews}

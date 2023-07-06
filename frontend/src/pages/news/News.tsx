@@ -7,6 +7,7 @@ import {NEWS_PER_PAGE} from '../../constant/PER_PAGE'
 import {Link} from "react-router-dom";
 import COLOR from "../../constant/COLOR";
 const NewsBox = ({news}) => {
+    
     return (<Card className="w-96">
         <div className="flex">
             <div className="w-1/2"><img className="w-100 object-cover" src={news.avatar}/></div>

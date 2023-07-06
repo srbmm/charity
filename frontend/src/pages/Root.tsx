@@ -11,9 +11,12 @@ import person2 from './../assets/images/person2.jpg'
 import person3 from './../assets/images/person3.jpg'
 import main from './../assets/images/main.jpg'
 import {ParticipantCard} from "./Participants/Participants";
-
+import useGetData from '../hook/useGetData';
+import { getSelectedNews } from '../data/News';
 const Root: React.FC = () => {
     const [sliderData, setSliderData] = useState([])
+    const  [isLoadNews, dataNews, errorNews] = useGetData(getSelectedNews())
+    console.log(dataNews)
     return (
         <>
             <HeaderAndFooter>
@@ -57,10 +60,10 @@ const Root: React.FC = () => {
                     <div className="mt-20">
                         <h1 className="text-2xl text-center">اخبار</h1>
                         <div className="hidden md:block">
-                            <NewsSlider data={[]}/>
+                        {dataNews?.length ? <NewsSlider  data={dataNews}/> : ""}
                         </div>
                         <div className="block md:hidden">
-                            {/*<PhoneNewsSlider  data={[]}/>*/}
+                            {dataNews?.length ? <PhoneNewsSlider  data={dataNews}/> : ""}
                         </div>
                     </div>
                     {/*Hamian*/}
