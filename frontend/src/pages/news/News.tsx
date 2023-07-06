@@ -10,7 +10,7 @@ const NewsBox = ({news}) => {
     
     return (<Card className="w-96">
         <div className="flex">
-            <div className="w-1/2"><img className="w-100 object-cover" src={news.avatar}/></div>
+            <div className="w-1/2"><img className="w-36 h-56 object-cover rounded" src={news.avatar}/></div>
             <div className="w-1/2 p-2">
                 <div className="flex flex-col justify-between h-full">
                     <div>
