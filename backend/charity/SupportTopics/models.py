@@ -35,7 +35,7 @@ class SupportTopics(models.Model):
 
     class Meta:
         db_table = 'SupportTopics'
-        verbose_name = 'موضوع برای حمایت'
+        verbose_name = 'پروژه'
         verbose_name_plural = 'موضوعات برای حمایت'
 
  

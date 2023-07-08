@@ -11,9 +11,7 @@ class Info(models.Model):
 
     phone_number1 = models.BigIntegerField(blank=False,null=False,verbose_name='شماره تماس ۱')
     phone_number2 = models.BigIntegerField(blank=True,null=True,verbose_name='شماره تماس ۲')
-    phone_number3 = models.BigIntegerField(blank=True,null=True,verbose_name='شماره تماس ۳')
-    phone_number4 = models.BigIntegerField(blank=True,null=True,verbose_name='شماره تماس ۴')
-    phone_number5 = models.BigIntegerField(blank=True,null=True,verbose_name='شماره تماس ۵')
+
 
     email = models.EmailField(verbose_name='ایمیل')
     

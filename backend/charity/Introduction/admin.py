@@ -14,7 +14,7 @@ class VisionAdmin(admin.ModelAdmin):
     def has_add_permission(self, request, obj=None):
         if Vision.objects.exists():
             return False  
-        return True# disable the button if Vision exists
+        return True
         
 
 @admin.register(History)
@@ -25,7 +25,7 @@ class HistoryAdmin(admin.ModelAdmin):
     def has_add_permission(self, request, obj=None):
         if History.objects.exists():
             return False  
-        return True# disable the button if Vision exists
+        return True
 
 
 @admin.register(Mission)
@@ -36,7 +36,7 @@ class MissionAdmin(admin.ModelAdmin):
     def has_add_permission(self, request, obj=None):
         if Mission.objects.exists():
             return False  
-        return True# disable the button if Vision exists
+        return True
 
 
 @admin.register(Chart)
@@ -47,7 +47,7 @@ class ChartAdmin(admin.ModelAdmin):
     def has_add_permission(self, request, obj=None):
         if Chart.objects.exists():
             return False  
-        return True# disable the button if Vision exists
+        return True
 
 
 @admin.register(Statute)
@@ -58,7 +58,7 @@ class StatuteAdmin(admin.ModelAdmin):
     def has_add_permission(self, request, obj=None):
         if Statute.objects.exists():
             return False  
-        return True# disable the button if Vision exists
+        return True
 
 
 
@@ -70,7 +70,7 @@ class ValuesAdmin(admin.ModelAdmin):
     def has_add_permission(self, request, obj=None):
         if Values.objects.exists():
             return False  
-        return True# disable the button if Vision exists
+        return True
     
 
 @admin.register(Permissions)

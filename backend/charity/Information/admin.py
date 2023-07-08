@@ -1,4 +1,5 @@
 from django.contrib import admin
+from django.http.request import HttpRequest
 
 # Register your models here.
 from .models import Info,Links
@@ -20,6 +21,12 @@ class InfoAdmin(admin.ModelAdmin):
 @admin.register(Links)
 class LinksAdmin(admin.ModelAdmin):
     list_display = ['title']
+
+    def has_add_permission(self, request,object = None) -> bool:
+        if Links.objects.all().count() > 6:
+            return False
+        return True
+        
 
 
 
