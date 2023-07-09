@@ -14,6 +14,21 @@ class Project(models.Model):
 
     ]
 
+    TOPICS_CHOICES = [
+
+        ('studentSupport','حمایت از دانشجویان'),
+        ('sports','ورزشی'),
+        ('cultural','فرهنگی'),
+        ('research','پژوهشی'),
+        ('educational','آموزشی'),
+        ('constructional','عمرانی'),
+
+    ]
+
+
+    
+
+    topic = models.CharField(max_length=20,choices=TOPICS_CHOICES,verbose_name='موضوع')
     title = models.CharField(max_length=50,verbose_name='عنوان')
     avatar = models.ImageField(blank=True,upload_to='projects/',verbose_name='تصویر')
     budget = models.CharField(max_length=50,verbose_name='بودجه')

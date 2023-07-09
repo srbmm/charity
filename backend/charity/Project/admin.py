@@ -10,6 +10,6 @@ from .models import Project
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
     list_display = ['title','budget','state']
-    list_filter = ['state']
+    list_filter = ['state','topic']
 
 
