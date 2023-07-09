@@ -14,9 +14,9 @@ from .serializers import NewsSerializer
 class SelectedNewsView(APIView):
 
     def get(self,request):
+
         selected_news = News.objects.filter(is_selected = True)
         count = selected_news.count()
-
         serializer = NewsSerializer(selected_news,many=True,context = {'request':request})
         return Response({'News_count':count,'News':serializer.data} , status=status.HTTP_200_OK)
 
@@ -35,7 +35,7 @@ class NewsListView(APIView):
             return Response({'News_count':all_the_news.count(),'News':serializer.data})
         
         page = 1 
-        count = 10
+        count = 9
         order_by = None
         reverse = False
         if request.query_params.get('count'):
@@ -79,17 +79,8 @@ class NewsListView(APIView):
     
 
 
-
-
-
-        #News.objects.filter(Q(int(pk) < (page * 10)) & Q(int(pk) > (page*10 - 9)
-
         
-    
-
-
-
-    
+        
 
 class NewsDetailView(APIView):
 
