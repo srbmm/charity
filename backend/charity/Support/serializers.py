@@ -1,15 +1,16 @@
 
 
 from rest_framework import serializers
+from .models import SupportReceipt
 
 
 
-
-class tempSerializer(serializers.ModelSerializer):
+class SupportReceiptSerializer(serializers.ModelSerializer):
     
     class Meta:
-        model = None
-        fields = None
+        model = SupportReceipt
+        fields = ('topic','support_fund','full_name','email','phone_number','amount')
+
 
 
 
