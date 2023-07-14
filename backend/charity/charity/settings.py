@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     'News.apps.NewsConfig',
     'Project',
     'Information',
+    'Support',
     
 
 

@@ -19,6 +19,7 @@ urlpatterns = [
     path('supporters/',include('Supporters.urls')),
     path('projects/',include('Project.urls')),
     path('Info/',include('Information.urls')),
+    path('support/',include('Support.urls')),
 
 
     
