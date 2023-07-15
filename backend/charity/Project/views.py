@@ -39,6 +39,15 @@ class ProjectsListView(APIView):
                 the_objects = the_objects.filter(state = state)
             else:
                 return Response(status=status.HTTP_400_BAD_REQUEST,data={'error':'Invalid state'})
+    
+        if request.query_params.get('fund'):
+            support_fund = request.query_params.get('fund')
+            if support_fund in ['social','technical','agriculture']:
+                the_objects = the_objects.filter(support_fund = support_fund)
+            else:
+                return Response(status=status.HTTP_400_BAD_REQUEST)
+        
+            
         
         serializer = ProjectSerializer(the_objects,many = True , context = {'request': request})
         return Response(serializer.data,status=status.HTTP_200_OK)

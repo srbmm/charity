@@ -9,7 +9,9 @@ from .models import Project
 
 @admin.register(Project)
 class ProjectAdmin(admin.ModelAdmin):
-    list_display = ['title','budget','state']
-    list_filter = ['state','topic']
+    list_display = ['title','budget','state','support_fund']
+    list_filter = ['state','topic','support_fund']
+
+
 
 
