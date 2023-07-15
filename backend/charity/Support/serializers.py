@@ -1,8 +1,7 @@
 
 
 from rest_framework import serializers
-from .models import SupportReceipt
-
+from .models import SupportReceipt,NonCashSupport
 
 
 class SupportReceiptSerializer(serializers.ModelSerializer):
@@ -14,4 +13,10 @@ class SupportReceiptSerializer(serializers.ModelSerializer):
 
 
 
+class NonCashSupportSerializer(serializers.ModelSerializer):
+
+    class Meta:
+        model = NonCashSupport
+        fields = ('topic','full_name','phone_number','support_type','description')
+    
 

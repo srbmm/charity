@@ -3,6 +3,45 @@ from django.db import models
 # Create your models here.
 
 
+class NonCashSupport(models.Model):
+    
+    TOPICS_CHOICES = [
+
+        ('studentSupport','حمایت از دانشجویان'),
+        ('sports','ورزشی'),
+        ('cultural','فرهنگی'),
+        ('research','پژوهشی'),
+        ('educational','آموزشی'),
+        ('constructional','عمرانی'),
+
+    ]
+
+    SUPPORT_TYPE_CHOICES = [
+        ('endowment','وقف اموال'),
+        ('inheritance','ارث'),
+        ('rent','اجاره به شرط تملیک'),
+        ('expertise','تخصص'),
+    ]
+
+
+    topic = models.CharField(max_length=20,choices=TOPICS_CHOICES,verbose_name='محل مصرف')
+    full_name = models.CharField(max_length=255,verbose_name='نام و نام خانوادگی')
+    phone_number = models.BigIntegerField(verbose_name='شماره تلفن')
+    support_type = models.CharField(max_length=40,choices=SUPPORT_TYPE_CHOICES,verbose_name='نوع حمایت')
+    description = models.TextField(verbose_name='توضیحات')
+    support_date = models.DateField(verbose_name='تاریخ حمایت',auto_now_add=True)
+
+
+
+    
+    class Meta:
+        db_table = 'NonCashSupport'
+        verbose_name = 'حمایت غیر نقدی'
+        verbose_name_plural = 'حمایت های غیر نقدی'
+
+
+    def __str__(self):
+        return f' {self.full_name}         {self.support_type}'
 
 
 class SupportReceipt(models.Model):
