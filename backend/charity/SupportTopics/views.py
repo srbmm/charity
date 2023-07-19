@@ -1,23 +1,14 @@
-
-
-
 from rest_framework.views import APIView
 from rest_framework.response import Response
 from rest_framework import status
-
-
 
 from .models import SupportTopics
 
 from .serializers import SupportTopicsSerializer,SingleSupportTopicsSerializer
 
 
-
 class SupportTopicsListView(APIView):
-
-
     def get(self,request):
-
         topic = None
 
         if(len(request.query_params) == 0):
@@ -28,7 +19,6 @@ class SupportTopicsListView(APIView):
         if request.query_params.get('topic'):
 
             topic = request.query_params.get('topic')
-
             if topic in ['studentSupport','sports','cultural','research','educational','constructional']:
                 all_the_objects = SupportTopics.objects.filter(topic = topic)
             else:
@@ -40,11 +30,7 @@ class SupportTopicsListView(APIView):
         return Response(status=status.HTTP_204_NO_CONTENT)
 
 
-
-
-
 class SupportTopicsDetailView(APIView):
-
     def get(self,request,pk):
         try:
             the_object = SupportTopics.objects.get(pk = pk)
@@ -53,4 +39,3 @@ class SupportTopicsDetailView(APIView):
 
         serializer = SingleSupportTopicsSerializer(the_object,context = {'request':request})
         return Response(serializer.data,status=status.HTTP_200_OK)
-    

@@ -3,7 +3,6 @@ from django.contrib import admin
 from .models import Supporter
 
 
-
 @admin.register(Supporter)
 class SupporterAdmin(admin.ModelAdmin):
     exclude =('created_date',)

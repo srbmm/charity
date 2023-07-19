@@ -1,7 +1,5 @@
 from django.contrib import admin
-from django.http.request import HttpRequest
 
-# Register your models here.
 from .models import Info,Links
 
 
@@ -10,11 +8,10 @@ class InfoAdmin(admin.ModelAdmin):
     list_display = ['title']
     exclude = ('title',)
     
-
-    def has_add_permission(self, request, obj=None):
+    def has_add_permission(self, request, obj=None) -> bool:
         if Info.objects.exists():
             return False  
-        return True# disable the button if Vision exists
+        return True # disable the button if Vision exists
     
 
 

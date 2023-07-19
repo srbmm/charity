@@ -1,12 +1,8 @@
-
-
 from rest_framework import serializers
 from .models import SupportTopics
 
 
 class SupportTopicsSerializer(serializers.ModelSerializer):
-
-
     class Meta:
         model = SupportTopics
         fields = (
@@ -18,8 +14,6 @@ class SupportTopicsSerializer(serializers.ModelSerializer):
 
 
 class SingleSupportTopicsSerializer(serializers.ModelSerializer):
-
-
     class Meta:
         model = SupportTopics
         fields = (

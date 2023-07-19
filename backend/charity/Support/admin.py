@@ -1,10 +1,6 @@
 from django.contrib import admin
 
-# Register your models here.
-
-
 from .models import SupportReceipt,NonCashSupport
-
 
 
 @admin.register(SupportReceipt)
@@ -22,8 +18,6 @@ class SupportReceiptAdmin(admin.ModelAdmin):
     def has_add_permission(self, request,object = None) -> bool:
         return False
     
-
-
 
 @admin.register(NonCashSupport)
 class NonCashSupportAdmin(admin.ModelAdmin):

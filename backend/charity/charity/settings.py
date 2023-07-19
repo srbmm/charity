@@ -25,7 +25,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-
     
     'Introduction',
     "Members",
@@ -36,9 +35,6 @@ INSTALLED_APPS = [
     'Information',
     'Support',
     
-
-
-
     'rest_framework',
     'corsheaders',
 
@@ -58,9 +54,7 @@ MIDDLEWARE = [
 ]
 
 
-
 ROOT_URLCONF = 'charity.urls'
-
 
 
 TEMPLATES = [
@@ -78,7 +72,6 @@ TEMPLATES = [
         },
     },
 ]
-
 
 
 WSGI_APPLICATION = 'charity.wsgi.application'

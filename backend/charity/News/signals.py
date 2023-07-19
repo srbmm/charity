@@ -1,13 +1,6 @@
-
-
-
-
 from django.db.models.signals import pre_save
 from django.dispatch import receiver
 from .models import News
-
-
-
 
 
 @receiver(pre_save, sender=News)
@@ -18,12 +11,4 @@ def limit_selected_news(sender, instance, **kwargs):
         non_selected_news.is_selected = False
         non_selected_news.save()
 
-    
-
-    
-
-
-
-
-    
 

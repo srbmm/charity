@@ -6,6 +6,7 @@ from .models import (
     Audit,Performance,Faq,Partners
 )
 
+
 @admin.register(Vision)
 class VisionAdmin(admin.ModelAdmin):
     list_display = ['title','last_update']
@@ -84,17 +85,10 @@ class PermissionsAdmin(admin.ModelAdmin):
 class FinancialAdmin(admin.ModelAdmin):
     list_display = ['title','last_update']
 
-    '''
-    def has_add_permission(self, request, obj=None):
-        if Values.objects.exists():
-            return False  
-        return True# disable the button if Vision exists
-    '''
 
 @admin.register(Audit)
 class AuditAdmin(admin.ModelAdmin):
     list_display = ['title','last_update']
-
 
 
 @admin.register(Performance)
@@ -102,26 +96,12 @@ class PerformanceAdmin(admin.ModelAdmin):
     list_display = ['title','last_update']
 
 
-
 @admin.register(Faq)
 class FaqAdmin(admin.ModelAdmin):
     list_display = ['question','last_update']
-
-
 
 
 @admin.register(Partners)
 class PartnersAdmin(admin.ModelAdmin):
     list_display = ['full_name','post']
     
-
-
-
-
-
-
-    
-
-
-
-

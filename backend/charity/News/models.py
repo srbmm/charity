@@ -1,8 +1,6 @@
 from django.db import models
 
 
-
-
 class News(models.Model):
     title = models.CharField(max_length=50,verbose_name='عنوان')
     avatar = models.ImageField(blank=True,upload_to='News/',verbose_name='تصویر خبر')
@@ -12,13 +10,10 @@ class News(models.Model):
     seen_count = models.IntegerField(default=0,verbose_name='تعداد بازدید')
     is_selected = models.BooleanField(default=False,verbose_name='خبر خاص')
 
-
-
     class Meta:
         db_table = 'News'
         verbose_name = 'خبر'
         verbose_name_plural = 'اخبار' 
-
 
     def __str__(self):
         return f'{self.title}'

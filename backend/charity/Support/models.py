@@ -1,19 +1,14 @@
 from django.db import models
 
-# Create your models here.
 
-
-class NonCashSupport(models.Model):
-    
+class NonCashSupport(models.Model):    
     TOPICS_CHOICES = [
-
         ('studentSupport','حمایت از دانشجویان'),
         ('sports','ورزشی'),
         ('cultural','فرهنگی'),
         ('research','پژوهشی'),
         ('educational','آموزشی'),
         ('constructional','عمرانی'),
-
     ]
 
     SUPPORT_TYPE_CHOICES = [
@@ -23,47 +18,36 @@ class NonCashSupport(models.Model):
         ('expertise','تخصص'),
     ]
 
-
     topic = models.CharField(max_length=20,choices=TOPICS_CHOICES,verbose_name='محل مصرف')
     full_name = models.CharField(max_length=255,verbose_name='نام و نام خانوادگی')
     phone_number = models.BigIntegerField(verbose_name='شماره تلفن')
     support_type = models.CharField(max_length=40,choices=SUPPORT_TYPE_CHOICES,verbose_name='نوع حمایت')
     description = models.TextField(verbose_name='توضیحات')
     support_date = models.DateField(verbose_name='تاریخ حمایت',auto_now_add=True)
-
-
-
     
     class Meta:
         db_table = 'NonCashSupport'
         verbose_name = 'حمایت غیر نقدی'
         verbose_name_plural = 'حمایت های غیر نقدی'
 
-
     def __str__(self):
         return f' {self.full_name}         {self.support_type}'
 
 
 class SupportReceipt(models.Model):
-
     TOPICS_CHOICES = [
-
         ('studentSupport','حمایت از دانشجویان'),
         ('sports','ورزشی'),
         ('cultural','فرهنگی'),
         ('research','پژوهشی'),
         ('educational','آموزشی'),
         ('constructional','عمرانی'),
-
     ]
 
-
     SUPPORT_FUND_CHOICES = [
-
         ('agriculture','دانشکده کشاورزی'),
         ('technical','دانشکده فنی مهندسی و علوم کاربردی'),
         ('social','فعالیت های اجتماعی و فوق برنامه'),
-
     ]
 
     topic = models.CharField(max_length=20,choices=TOPICS_CHOICES,verbose_name='موضوع')
@@ -74,20 +58,11 @@ class SupportReceipt(models.Model):
     amount = models.BigIntegerField(verbose_name='میزان حمایت')
     support_date = models.DateField(verbose_name='تاریخ حمایت',auto_now_add=True)
 
-    
-
-
-
     class Meta:
         db_table = 'Support'
         verbose_name = 'حمایت'
         verbose_name_plural = 'صندوق حمایت ها'
 
-
     def __str__(self):
         return f' {self.full_name}         {self.amount}'
     
-
-
-
-

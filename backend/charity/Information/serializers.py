@@ -1,8 +1,6 @@
-
-
-
 from rest_framework import serializers
 from .models import Links,Info
+
 
 class InfoSerializer(serializers.ModelSerializer):
 
@@ -17,7 +15,6 @@ class InfoSerializer(serializers.ModelSerializer):
             'telegram',
             'instagram'
         )
-
 
 
 class LinkSerializer(serializers.ModelSerializer):
