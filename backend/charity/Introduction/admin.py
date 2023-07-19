@@ -112,8 +112,8 @@ class FaqAdmin(admin.ModelAdmin):
 
 @admin.register(Partners)
 class PartnersAdmin(admin.ModelAdmin):
-    list_display = ['full_name','post','category']
-    list_filter = ['category']
+    list_display = ['full_name','post']
+    
 
 
 

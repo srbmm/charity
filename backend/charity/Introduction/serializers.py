@@ -95,7 +95,7 @@ class PartnersSerializer(serializers.ModelSerializer):
         model = Partners
         fields = (
                     'full_name','avatar','post','biography','phone_number',
-                    'email','category'
+                    'email'
                 )
         
 

@@ -376,13 +376,13 @@ class Faq(models.Model):
 
 class Partners(models.Model):
 
-    CATEGORY_CHOICES = [
-        ('Information Technology','فناوری اطلاعات'),
-        ('Accountants','حسابدار'),
-        ('auditor','حسابرس'),
-        ('Financial','مالی'),
-        ('Communication','ارتباط با دانشجویان')
-    ]
+    # CATEGORY_CHOICES = [
+    #     ('Information Technology','فناوری اطلاعات'),
+    #     ('Accountants','حسابدار'),
+    #     ('auditor','حسابرس'),
+    #     ('Financial','مالی'),
+    #     ('Communication','ارتباط با دانشجویان')
+    # ]
 
     full_name = models.CharField(max_length=255,verbose_name='نام و نام خانوادگی')
     avatar = models.ImageField(blank=True,upload_to='Introduction/',verbose_name='تصویر')
@@ -390,7 +390,7 @@ class Partners(models.Model):
     biography = models.CharField(max_length=255,verbose_name='بیوگرافی')
     phone_number = models.BigIntegerField(verbose_name='شماره تماس')
     email = models.EmailField(blank=True,null=True,verbose_name='ایمیل')
-    category = models.CharField(max_length=30 , choices= CATEGORY_CHOICES,verbose_name='دسته بندی')
+    #category = models.CharField(max_length=30 , choices= CATEGORY_CHOICES,verbose_name='دسته بندی')
     created_date = models.DateTimeField(auto_now_add=True,verbose_name='تاریخ ساخت')
 
 
