@@ -9,7 +9,7 @@ from rest_framework import status
 
 
 from .models import Supporter,Category
-from .serializers import SupporterSerializer
+from .serializers import SupporterSerializer,SingleSupporterSerializer
 
 
 
@@ -85,5 +85,19 @@ class NeitherView(APIView):
         serializer = SupporterSerializer(relatives_supporters,many = True, context={'request': request})
         return Response(serializer.data, status=status.HTTP_200_OK)
 
+
+
+
+class SupporterDetailView(APIView):
+    
+
+    def get(self,request,pk):
+        try:
+            supporter = Supporter.objects.get(pk=pk)
+        except Supporter.DoesNotExist:
+            return Response(status=status.HTTP_404_NOT_FOUND)
+        serializer = SingleSupporterSerializer(supporter,context = {'request':request})
+        return Response(serializer.data,status=status.HTTP_200_OK)
+    
 
 
