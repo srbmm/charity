@@ -61,3 +61,13 @@ class SupporterDetailView(APIView):
             return Response(status=status.HTTP_404_NOT_FOUND)
         serializer = SingleSupporterSerializer(supporter,context = {'request':request})
         return Response(serializer.data,status=status.HTTP_200_OK)
+
+
+
+class SpecialSupportersView(APIView):
+    def get(self,request):
+        supporters = Supporter.objects.filter(is_special = True)
+        serializer = SupporterSerializer(supporters,many = True, context = {'request':request})
+        return Response(serializer.data,status=status.HTTP_200_OK)
+    
+

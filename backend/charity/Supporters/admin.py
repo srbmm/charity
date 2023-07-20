@@ -9,9 +9,11 @@ class SupporterAdmin(admin.ModelAdmin):
     list_display = [
         'full_name',
         'biography',
+        'is_special',
+        
     ]
-    list_filter = ['categories']
-    filter_horizontal = ('categories',)
+    #list_filter = ['categories']
+    #filter_horizontal = ('categories',)
     
 
 

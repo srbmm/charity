@@ -8,6 +8,8 @@ class SupportersConfig(AppConfig):
 
 
     def ready(self) -> None:
+        import Supporters.signals
+        """
         from . import models
 
         CATEGORIES_CHOICES = [
@@ -25,4 +27,5 @@ class SupportersConfig(AppConfig):
         except:
             pass
             
-
+        """
+        

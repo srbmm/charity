@@ -2,7 +2,7 @@ from django.urls import path
 from .views import (
     RelativeView,AllSupportersView,
     FacultyView,NeitherView,GraduatesView,OrganizationView,
-    SupporterDetailView
+    SupporterDetailView,SpecialSupportersView
 )
 
 
@@ -14,6 +14,8 @@ urlpatterns = [
     #path('graduates/',GraduatesView.as_view()),
     #path('neither/',NeitherView.as_view()),
 
+    # for main page
+    path('main-page/',SpecialSupportersView.as_view(),name='3 main supporter'),
     # for single supporter
     path('<int:pk>/',SupporterDetailView.as_view(),name='single supporter'),        
 ]
