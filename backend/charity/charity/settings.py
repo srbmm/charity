@@ -25,6 +25,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
+    # for getway
+    'azbankgateways',
     
     'Introduction',
     "Members",
@@ -34,6 +37,7 @@ INSTALLED_APPS = [
     'Project',
     'Information',
     'Support',
+    
     
     'rest_framework',
     'corsheaders',
@@ -130,3 +134,39 @@ MEDIA_URL = '/media/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ORIGIN_ALLOW_ALL = True
+
+# getways config
+AZ_IRANIAN_BANK_GATEWAYS = {
+   'GATEWAYS': {
+       'BMI': {
+           'MERCHANT_CODE': '<YOUR MERCHANT CODE>',
+           'TERMINAL_CODE': '<YOUR TERMINAL CODE>',
+           'SECRET_KEY': '<YOUR SECRET CODE>',
+       },
+       'SEP': {
+           'MERCHANT_CODE': '<YOUR MERCHANT CODE>',
+           'TERMINAL_CODE': '<YOUR TERMINAL CODE>',
+       },
+       'ZARINPAL': {
+           'MERCHANT_CODE': '<YOUR MERCHANT CODE>',
+           'SANDBOX': 0,  # 0 disable, 1 active
+       },
+       'IDPAY': {
+           'MERCHANT_CODE': '<YOUR MERCHANT CODE>',
+           'METHOD': 'POST',  # GET or POST
+           'X_SANDBOX': 0,  # 0 disable, 1 active
+       },
+   },
+   'IS_SAMPLE_FORM_ENABLE': True, # اختیاری و پیش فرض غیر فعال است
+   'DEFAULT': 'BMI', # درگاه پیشفرض
+   'CURRENCY': 'IRR', # واحد پول 
+   'TRACKING_CODE_QUERY_PARAM': 'tc', # اختیاری
+   'TRACKING_CODE_LENGTH': 16, 
+   'SETTING_VALUE_READER_CLASS': 'azbankgateways.readers.DefaultReader', 
+   'BANK_PRIORITIES': [
+       'BMI',
+       'SEP',
+       # and so on ...
+   ], 
+   'IS_SAFE_GET_GATEWAY_PAYMENT': True # for getway test
+}

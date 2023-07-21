@@ -5,8 +5,15 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 
-urlpatterns = [    
+from azbankgateways.urls import az_bank_gateways_urls
+
+
+urlpatterns = [
+
     path('admin/', admin.site.urls),
+    # getway url
+    path('bankgateways/', az_bank_gateways_urls()),
+
     path('news/',include('News.urls')),
     path('introduction/',include('Introduction.urls')),
     path("members/",include("Members.urls")),
