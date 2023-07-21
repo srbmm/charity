@@ -169,5 +169,5 @@ AZ_IRANIAN_BANK_GATEWAYS = {
        'SEP',
        # and so on ...
    ], 
-   'IS_SAFE_GET_GATEWAY_PAYMENT': True # for getway test
+   'IS_SAFE_GET_GATEWAY_PAYMENT': False # for getway test
 }
