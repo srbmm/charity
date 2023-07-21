@@ -155,7 +155,7 @@ AZ_IRANIAN_BANK_GATEWAYS = {
        'IDPAY': {
            'MERCHANT_CODE': '<YOUR MERCHANT CODE>',
            'METHOD': 'POST',  # GET or POST
-           'X_SANDBOX': 0,  # 0 disable, 1 active
+           'X_SANDBOX':0,  # 0 disable, 1 active
        },
    },
    'IS_SAMPLE_FORM_ENABLE': True, # اختیاری و پیش فرض غیر فعال است

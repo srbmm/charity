@@ -9,7 +9,7 @@ from azbankgateways.exceptions import AZBankGatewaysException
 
 def go_to_gateway_view(request):
     # خواندن مبلغ از هر جایی که مد نظر است
-    amount = 1000
+    amount = 10000
     # تنظیم شماره موبایل کاربر از هر جایی که مد نظر است
     user_mobile_number = '+989876543245'  # اختیاری
 
