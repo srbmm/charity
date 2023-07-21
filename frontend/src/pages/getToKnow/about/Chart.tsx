@@ -1,11 +1,10 @@
 import React from 'react';
-import {Box} from "@mui/material";
 import {Loading, Theme} from "../../../components";
-import useGetData from "../../../hook/useGetData";
+import useApi from "../../../hook/useApi";
 import getIntroduction from "../../../data/Introduction";
 
 const Chart: React.FC = () => {
-    const [isLoad, data, err] = useGetData(getIntroduction("chart"));
+    const [isLoad, data, err] = useApi(getIntroduction("chart"));
     if (!isLoad) return <Loading/>
     return (
         <>

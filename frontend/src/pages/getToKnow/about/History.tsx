@@ -1,11 +1,10 @@
 import React from 'react';
-import {Box} from "@mui/material";
 import {Loading, Theme} from "../../../components";
-import useGetData from "../../../hook/useGetData";
+import useApi from "../../../hook/useApi";
 import getIntroduction from "../../../data/Introduction";
 
 const History: React.FC = () => {
-    const [isLoad, data, err] = useGetData(getIntroduction("history"));
+    const [isLoad, data, err] = useApi(getIntroduction("history"));
     if (!isLoad) return <Loading/>
     return (
         <>

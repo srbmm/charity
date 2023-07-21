@@ -1,11 +1,10 @@
 import React from 'react';
-import {Box} from "@mui/material";
 import {Loading, Theme} from "../../../components";
 import getIntroduction from "../../../data/Introduction";
-import useGetData from "../../../hook/useGetData";
+import useApi from "../../../hook/useApi";
 
 const Vision: React.FC = () => {
-    const [isLoad, data, err] = useGetData(getIntroduction("vision"))
+    const [isLoad, data, err] = useApi(getIntroduction("vision"))
     if (!isLoad) return <Loading/>
     return (
         <>

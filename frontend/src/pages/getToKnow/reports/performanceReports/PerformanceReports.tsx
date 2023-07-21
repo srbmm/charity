@@ -1,28 +1,17 @@
 import React from 'react';
-import {Loading, Theme} from "../../../../components";
-import useGetData from "../../../../hook/useGetData";
+import {DownloadCard, Loading, Theme} from "../../../../components";
+import useApi from "../../../../hook/useApi";
 import getIntroduction from "../../../../data/Introduction";
 
-const Performance = ({data}) => {
-    return (
-        <div>
-            <div className="flex gap-3 justify-center items-center">
-                <h1 className="text-center">{data.title}</h1>
-                <a href={data.file} target="_blank"
-                   className="border border-sky-400 hover:bg-sky-400 p-2 rounded text-center">دانلود گزارش</a>
-            </div>
-        </div>
-    )
-}
 const PerformanceReports: React.FC = () => {
-    const [isLoad, data, err] = useGetData(getIntroduction("performance"));
+    const [isLoad, data, err] = useApi(getIntroduction("performance"));
     if (!isLoad) return <Loading/>
     return (
         <>
             <Theme>
                 <div className="flex flex-col gap-4">
 
-                    {data.map(item => <Performance data={item}/>)}
+                    {data.map(item => <DownloadCard title={item.title} href={item.file} label="دانلود گزارش" /> )}
                 </div>
             </Theme>
         </>

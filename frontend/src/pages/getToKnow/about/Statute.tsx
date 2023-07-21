@@ -1,11 +1,11 @@
 import React from 'react';
 import {Loading, Theme} from "../../../components";
-import useGetData from "../../../hook/useGetData";
+import useApi from "../../../hook/useApi";
 import getIntroduction from "../../../data/Introduction";
 import {Link} from "flowbite-react";
 
 const Statute: React.FC = () => {
-    const [isLoad, data, err] = useGetData(getIntroduction("statute"));
+    const [isLoad, data, err] = useApi(getIntroduction("statute"));
     if (!isLoad) return <Loading/>
     return (
         <>

@@ -1,10 +1,10 @@
 import React from 'react';
 import {Loading, Theme} from "../../../components";
-import useGetData from "../../../hook/useGetData";
+import useApi from "../../../hook/useApi";
 import getIntroduction from "../../../data/Introduction";
 
 const Values: React.FC = () => {
-    const [isLoad, data, err] = useGetData(getIntroduction("values"));
+    const [isLoad, data, err] = useApi(getIntroduction("values"));
     if (!isLoad) return <Loading/>
     return (
         <>

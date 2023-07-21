@@ -4,7 +4,7 @@ const PAGES = {
     "id": {url: ":id", label: ""},
 
     // getToKnow
-    "get_to_know": {url: "get_to_know", label: "آشنایی"},
+    "get_to_know": {url: "get-to-know", label: "آشنایی"},
 
         "about": {url: "about", label: "درباره"},
             "vision": {url: "vision", label: "چشم انداز"},
@@ -17,39 +17,42 @@ const PAGES = {
             "licenses":{url: "licenses", label: "مجوز ها"},
 
         "components": {url: "components", label: "ارکان"},
-            "previousـboardـmembers": {url: "previousـboardـmembers", label: "اعضاء هیات مدیره قبلی"},
-            "currentـboardـmembers": {url: "currentـboardـmembers", label: "اعضاء هیات مدیره فعلی"},
-            "members_of_the_board_of_trustees": {url: "members_of_the_board_of_trustees", label: "اعضاء هیئت امناء"},
-            "members_of_the_founding_board": {url: "members_of_the_founding_board", label: "اعضاء هیات موسسان"},
+            "previousـboardـmembers": {url: "previous-board-members", label: "اعضاء هیات مدیره قبلی"},
+            "currentـboardـmembers": {url: "current-board-members", label: "اعضاء هیات مدیره فعلی"},
+            "members_of_the_board_of_trustees": {url: "members-of-the-board-of-trustees", label: "اعضاء هیئت امناء"},
+            "members_of_the_founding_board": {url: "members-of-the-founding-board", label: "اعضاء هیات موسسان"},
             "investigators": {url: "investigators", label: "بازرسان"},
-            "members_of_the_general_assembly": {url: "members_of_the_general_assembly", label: "بازرسان"},
+            "members_of_the_general_assembly": {url: "members-of-the-general-assembly", label: "بازرسان"},
 
         "reports": {url: "reports", label: "گزارش ها"},
-            "financialStatements": {url: "financial_statements", label: "صورت های مالی"},
-            "auditReport": {url: "audit_report", label: "گزارش های حسابرسی"},
-            "performanceReports": {url: "performance_reports", label: "گزارش های عملکردی"},
+            "financialStatements": {url: "financial-statements", label: "صورت های مالی"},
+            "auditReport": {url: "audit-report", label: "گزارش های حسابرسی"},
+            "performanceReports": {url: "performance-reports", label: "گزارش های عملکردی"},
 
         "employees": {url: "employees", label: "همکاران بنیاد"},
 
-        "frequently_asked_questions": {url: "frequently_asked_questions", label: "سوالات متداول"},
+        "frequently_asked_questions": {url: "frequently-asked-questions", label: "سوالات متداول"},
 
     // helpMethod topic
-    "helpTopic": {url: "help", label: "موضوعات برای حمایت"},
-        "supporting_students": {url: "supporting_students", label: "حمایت از دانشجویان"},
-        "sports": {url: "sports", label: "ورزشی"},
-        "cultural": {url: "cultural", label: "فرهنگی"},
-        "research": {url: "research", label: "پژوهشی"},
-        "educational": {url: "educational", label: "آموزشی"},
-        "construction": {url: "construction", label: "عمرانی"},
+    "helpTopic": {url: "support-topic", label: "موضوعات برای حمایت"},
+        "all": {url: "all", label: "همه موضوعات حمایت"},
+        "supporting_students": {url: "supporting-students", label: "حمایت از دانشجویان"},
+        "sports": {url: "sports", label: "حمایت های ورزشی"},
+        "cultural": {url: "cultural", label: "حمایت های فرهنگی"},
+        "research": {url: "research", label: "حمایت های پژوهشی"},
+        "educational": {url: "educational", label: "حمایت های آموزشی"},
+        "construction": {url: "construction", label: "حمایت های عمرانی"},
 
     // helpMethod method
-    "helpMethod": {url: "helpMethod", label: "روش های حمایت"},
+    "helpMethod": {url: "help-method", label: "روش های حمایت"},
+        "cash": {url: "cash", label: "حمایت نقدی"},
+        "non_cash": {url: "non-cash", label: "حمایت غیر نقدی"},
 
     // news
     "news": {url: "news", label: "اخبار"},
 
     // participants
-    "participants": {url: "participants", label: "حامیان انجمن"},
+    "supporter": {url: "supporter", label: "حامیان انجمن"},
 
     // projects
     "projects": {url: "projects", label: "پروژه ها"},

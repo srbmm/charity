@@ -1,35 +1,17 @@
 import React, {useState} from 'react';
 import {Loading, Theme} from "../../components";
-import useGetData from "../../hook/useGetData";
+import useApi from "../../hook/useApi";
 import {getAllNewsNumber, getNews} from "../../data/News";
-import {Card, Label, Pagination, Select} from 'flowbite-react';
+import {Label, Pagination, Select} from 'flowbite-react';
 import {NEWS_PER_PAGE} from '../../constant/PER_PAGE'
-import {Link} from "react-router-dom";
-import COLOR from "../../constant/COLOR";
-const NewsBox = ({news}) => {
-    
-    return (<Card className="w-96">
-        <div className="flex">
-            <div className="w-1/2"><img className="w-36 h-56 object-cover rounded" src={news.avatar}/></div>
-            <div className="w-1/2 p-2">
-                <div className="flex flex-col justify-between h-full">
-                    <div>
-                        <h3>{news.title}</h3>
-                        <p>{news.summary}</p>
-                    </div>
-                    <Link to={String(news.id)} className="text-center" style={{color: COLOR.lowPrimary}}>ادامه خبر...</Link>
-                </div>
-            </div>
-        </div>
-    </Card>)
+import {NewsCard as NewsBox} from "/src/components";
 
-}
 const News: React.FC = () => {
     const [currentPage, setCurrentPage] = useState(1);
     const [sort, setSort] = useState("");
     const [reverse, setReverse] = useState("");
-    const [isLoadAllNum, allNum, error] = useGetData(getAllNewsNumber())
-    const [isLoadNews, news, errorNews] = useGetData(getNews(currentPage, sort, reverse), [currentPage, sort, reverse])
+    const [isLoadAllNum, allNum, error] = useApi(getAllNewsNumber())
+    const [isLoadNews, news, errorNews] = useApi(getNews(currentPage, sort, reverse), [currentPage, sort, reverse])
     let totalPage = 0
     if (!isLoadAllNum || !isLoadNews) return <Loading/>
     const newsInPage = news.map((news) => <NewsBox key={news.id} news={news}/>)
@@ -84,4 +66,3 @@ const News: React.FC = () => {
 };
 
 export default News;
-export {NewsBox}

@@ -1,12 +1,18 @@
 import React from 'react';
-import {Box} from "@mui/material";
-import {Theme} from "../../components";
+import {Loading, Theme} from "../../components";
+import useApi from "../../hook/useApi";
+import {getSupporterTopic} from "../../data/SupportTopic";
+import SupportCard from "../../components/SupportCard";
 
-const SupportingStudents:React.FC = () => {
+const SupportingStudents: React.FC = () => {
+    const [isLoad, data, error] = useApi(getSupporterTopic("studentSupport"))
+    if (!isLoad) return <Loading/>
     return (
         <>
             <Theme>
-                <Box>صفحه مورد نظر به زودی تکمیل میگردد</Box>
+                <div className="flex flex-col gap-2">
+                    {data.map((item, index) => <SupportCard revesre={index % 2 == 0} key={item.id} data={item}/>)}
+                </div>
             </Theme>
         </>
     );

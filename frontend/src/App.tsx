@@ -4,172 +4,212 @@ import {
     RouterProvider,
 } from "react-router-dom";
 import "./App.css";
-import {Root, NotFound,
+import { ErrorBoundary } from "react-error-boundary";
 
-    Vision, History, Chart, Missions, Statute, Introductions, Values, Licenses,
-    PreviousBoardMembers, CurrentBoardMembers, MembersOfTheBoardOfTrustees, MembersOfTheFoundingBoard, Investigators, MembersOfTheGeneralAssembly,
-    FinancialStatements, AuditReport, PerformanceReports,
-    Employees, OneEmployee,
+import {
+    Root,
+    NotFound,
+
+    Vision,
+    History,
+    Chart,
+    Missions,
+    Statute,
+    Values,
+    Licenses,
+    PreviousBoardMembers,
+    CurrentBoardMembers,
+    MembersOfTheBoardOfTrustees,
+    MembersOfTheFoundingBoard,
+    Investigators,
+    MembersOfTheGeneralAssembly,
+    FinancialStatements,
+    AuditReport,
+    PerformanceReports,
+    Employees,
     FrequentlyAskedQuestions,
 
-    SupportingStudents, Sports, Cultural, Research, Educational, Construction,
+    AllSupportTopic,
+    SupportingStudents,
+    Sports,
+    Cultural,
+    Research,
+    Educational,
+    Construction,
+    OneSupportTopic,
 
-    HelpMethod,
+    Cash,
+    NonCash,
 
-    News, OneNews,
 
-    Participants, OneParticipant,
+    News,
+    OneNews,
 
-    Projects
+    Supporter,
+    OneSupporter,
+
+    Projects,
+    OneProject
 } from "./pages";
 import PAGES from "./constant/PAGES";
+import {ErrorFallback} from "./components";
+
+
 const router = createBrowserRouter(
     [
         {
             path: PAGES.home.url,
-            element: <Root />,
+            element: <ErrorBoundary fallback={<ErrorFallback />}><Root/></ErrorBoundary>,
         },
 
         {
-            path: PAGES.get_to_know.url + '/' + PAGES.about.url + '/' +  PAGES.vision.url,
-            element: <Vision />
+            path: PAGES.get_to_know.url + '/' + PAGES.about.url + '/' + PAGES.vision.url,
+            element: <ErrorBoundary fallback={<ErrorFallback />}><Vision/></ErrorBoundary>
         },
         {
-            path: PAGES.get_to_know.url + '/' + PAGES.about.url + '/' +  PAGES.history.url,
-            element: <History />
+            path: PAGES.get_to_know.url + '/' + PAGES.about.url + '/' + PAGES.history.url,
+            element: <ErrorBoundary fallback={<ErrorFallback />}><History/></ErrorBoundary>
         },
         {
             path: PAGES.get_to_know.url + '/' + PAGES.about.url + '/' + PAGES.chart.url,
-            element: <Chart />
+            element: <ErrorBoundary fallback={<ErrorFallback />}><Chart/></ErrorBoundary>
         },
         {
             path: PAGES.get_to_know.url + '/' + PAGES.about.url + '/' + PAGES.mission.url,
-            element: <Missions />
+            element: <ErrorBoundary fallback={<ErrorFallback />}><Missions/></ErrorBoundary>
         },
         {
             path: PAGES.get_to_know.url + '/' + PAGES.about.url + '/' + PAGES.statute.url,
-            element: <Statute />
-        },
-        {
-            path: PAGES.get_to_know.url + '/' + PAGES.about.url + '/' + PAGES.introduction.url,
-            element: <Introductions />
+            element: <ErrorBoundary fallback={<ErrorFallback />}><Statute/></ErrorBoundary>
         },
         {
             path: PAGES.get_to_know.url + '/' + PAGES.about.url + '/' + PAGES.values.url,
-            element: <Values />
+            element: <ErrorBoundary fallback={<ErrorFallback />}><Values/></ErrorBoundary>
         },
         {
             path: PAGES.get_to_know.url + '/' + PAGES.about.url + '/' + PAGES.licenses.url,
-            element: <Licenses />
+            element: <ErrorBoundary fallback={<ErrorFallback />}><Licenses/></ErrorBoundary>
         },
 
         {
             path: PAGES.get_to_know.url + '/' + PAGES.components.url + '/' + PAGES.previousـboardـmembers.url,
-            element: <PreviousBoardMembers />
+            element: <ErrorBoundary fallback={<ErrorFallback />}><PreviousBoardMembers/></ErrorBoundary>
         },
         {
             path: PAGES.get_to_know.url + '/' + PAGES.components.url + '/' + PAGES.currentـboardـmembers.url,
-            element: <CurrentBoardMembers />
+            element: <ErrorBoundary fallback={<ErrorFallback />}><CurrentBoardMembers/></ErrorBoundary>
         },
         {
             path: PAGES.get_to_know.url + '/' + PAGES.components.url + '/' + PAGES.members_of_the_board_of_trustees.url,
-            element: <MembersOfTheBoardOfTrustees />
+            element: <ErrorBoundary fallback={<ErrorFallback />}><MembersOfTheBoardOfTrustees/></ErrorBoundary>
         },
         {
             path: PAGES.get_to_know.url + '/' + PAGES.components.url + '/' + PAGES.members_of_the_founding_board.url,
-            element: <MembersOfTheFoundingBoard />
+            element: <ErrorBoundary fallback={<ErrorFallback />}><MembersOfTheFoundingBoard/></ErrorBoundary>
         },
         {
             path: PAGES.get_to_know.url + '/' + PAGES.components.url + '/' + PAGES.investigators.url,
-            element: <Investigators />
+            element: <ErrorBoundary fallback={<ErrorFallback />}><Investigators/></ErrorBoundary>
         },
         {
             path: PAGES.get_to_know.url + '/' + PAGES.components.url + '/' + PAGES.members_of_the_general_assembly.url,
-            element: <MembersOfTheGeneralAssembly />
+            element: <ErrorBoundary fallback={<ErrorFallback />}><MembersOfTheGeneralAssembly/></ErrorBoundary>
         },
 
         {
-            path: PAGES.get_to_know.url + '/' + PAGES.reports.url + '/' +  PAGES.financialStatements.url,
-            element: <FinancialStatements />
+            path: PAGES.get_to_know.url + '/' + PAGES.reports.url + '/' + PAGES.financialStatements.url,
+            element: <ErrorBoundary fallback={<ErrorFallback />}><FinancialStatements/></ErrorBoundary>
         },
         {
-            path: PAGES.get_to_know.url + '/' + PAGES.reports.url + '/' +  PAGES.auditReport.url,
-            element: <AuditReport />
+            path: PAGES.get_to_know.url + '/' + PAGES.reports.url + '/' + PAGES.auditReport.url,
+            element: <ErrorBoundary fallback={<ErrorFallback />}><AuditReport/></ErrorBoundary>
         },
         {
-            path: PAGES.get_to_know.url + '/' + PAGES.reports.url + '/' +  PAGES.performanceReports.url,
-            element: <PerformanceReports />
+            path: PAGES.get_to_know.url + '/' + PAGES.reports.url + '/' + PAGES.performanceReports.url,
+            element: <ErrorBoundary fallback={<ErrorFallback />}><PerformanceReports/></ErrorBoundary>
         },
         {
             path: PAGES.get_to_know.url + '/' + PAGES.employees.url,
-            element: <Employees />
+            element: <ErrorBoundary fallback={<ErrorFallback />}><Employees/></ErrorBoundary>
         },
-        {
-            path: PAGES.get_to_know.url + '/' + PAGES.employees.url + '/' + '/' + PAGES.id.url,
-            element: <OneEmployee />
-        },
-
         {
             path: PAGES.get_to_know.url + '/' + PAGES.frequently_asked_questions.url,
-            element: <FrequentlyAskedQuestions />
+            element: <ErrorBoundary fallback={<ErrorFallback />}><FrequentlyAskedQuestions/></ErrorBoundary>
         },
 
         {
+            path: PAGES.helpTopic.url + '/' + PAGES.all.url,
+            element: <ErrorBoundary fallback={<ErrorFallback />}><AllSupportTopic/></ErrorBoundary>
+        },
+        {
             path: PAGES.helpTopic.url + '/' + PAGES.supporting_students.url,
-            element: <SupportingStudents />
+            element: <ErrorBoundary fallback={<ErrorFallback />}><SupportingStudents/></ErrorBoundary>
         },
         {
             path: PAGES.helpTopic.url + '/' + PAGES.sports.url,
-            element: <Sports />
+            element: <ErrorBoundary fallback={<ErrorFallback />}><Sports/></ErrorBoundary>
         },
         {
             path: PAGES.helpTopic.url + '/' + PAGES.cultural.url,
-            element: <Cultural />
+            element: <ErrorBoundary fallback={<ErrorFallback />}><Cultural/></ErrorBoundary>
         },
         {
             path: PAGES.helpTopic.url + '/' + PAGES.research.url,
-            element: <Research />
+            element:<ErrorBoundary fallback={<ErrorFallback />}><Research/></ErrorBoundary>
         },
         {
             path: PAGES.helpTopic.url + '/' + PAGES.educational.url,
-            element: <Educational />
+            element: <ErrorBoundary fallback={<ErrorFallback />}><Educational/></ErrorBoundary>
         },
         {
             path: PAGES.helpTopic.url + '/' + PAGES.construction.url,
-            element: <Construction />
+            element: <ErrorBoundary fallback={<ErrorFallback />}><Construction/></ErrorBoundary>
+        },
+        {
+            path: PAGES.helpTopic.url + '/' + PAGES.id.url,
+            element: <ErrorBoundary fallback={<ErrorFallback />}><OneSupportTopic/></ErrorBoundary>
         },
 
+
         {
-            path: PAGES.helpMethod.url,
-            element: <HelpMethod />,
+            path: PAGES.helpMethod.url + "/" + PAGES.cash.url,
+            element: <ErrorBoundary fallback={<ErrorFallback />}><Cash/></ErrorBoundary>,
+        },
+        {
+            path: PAGES.helpMethod.url + "/" + PAGES.non_cash.url,
+            element: <ErrorBoundary fallback={<ErrorFallback />}><NonCash/></ErrorBoundary>
         },
 
         {
             path: PAGES.news.url,
-            element: <News />,
+            element: <ErrorBoundary fallback={<ErrorFallback />}><News/></ErrorBoundary>
         },
         {
             path: PAGES.news.url + '/' + PAGES.id.url,
-            element: <OneNews />,
+            element: <ErrorBoundary fallback={<ErrorFallback />}><OneNews/></ErrorBoundary>
         },
 
         {
-            path: PAGES.participants.url,
-            element: <Participants />,
+            path: PAGES.supporter.url,
+            element: <ErrorBoundary fallback={<ErrorFallback />}><Supporter/></ErrorBoundary>
         },
         {
-            path: PAGES.participants.url + "/" + PAGES.id.url,
-            element: <OneParticipant />,
+            path: PAGES.supporter.url + "/" + PAGES.id.url,
+            element: <ErrorBoundary fallback={<ErrorFallback />}><OneSupporter/></ErrorBoundary>
         },
 
         {
             path: PAGES.projects.url,
-            element: <Projects />,
+            element: <ErrorBoundary fallback={<ErrorFallback />}><Projects/></ErrorBoundary>
+        },
+        {
+            path: PAGES.projects.url + "/" + PAGES.id.url,
+            element: <ErrorBoundary fallback={<ErrorFallback />}><OneProject /></ErrorBoundary>
         },
 
         {
             path: "*",
-            element: <NotFound />,
+            element: <ErrorBoundary fallback={<ErrorFallback />}><NotFound/></ErrorBoundary>
         },
     ]
 );
@@ -177,7 +217,7 @@ const router = createBrowserRouter(
 const App: React.FC = () => {
     return (
         <React.StrictMode>
-            <RouterProvider router={router}/>
+                <RouterProvider router={router}/>
         </React.StrictMode>
     );
 }
