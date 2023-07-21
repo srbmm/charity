@@ -14,3 +14,5 @@ django-cors-headers==4.1.0
 Pillow
 
 
+# getway
+az-iranian-bank-gateways
