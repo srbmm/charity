@@ -4,8 +4,8 @@ from django.db import models
 class Info(models.Model):    
     title = models.CharField(max_length=50,default='اطلاعات ارتباطی')
     address = models.TextField(verbose_name='آدرس')
-    phone_number1 = models.BigIntegerField(blank=False,null=False,verbose_name='شماره تماس ۱')
-    phone_number2 = models.BigIntegerField(blank=True,null=True,verbose_name='شماره تماس ۲')
+    phone_number1 = models.CharField(max_length=30,blank=False,null=False,verbose_name='شماره تماس ۱')
+    phone_number2 = models.CharField(max_length=30,blank=True,null=True,verbose_name='شماره تماس ۲')
     email = models.EmailField(verbose_name='ایمیل')
     whatsapp = models.CharField(max_length=30,blank=True,null=True,verbose_name='واتساپ')
     telegram = models.CharField(max_length=40,blank=True,null=True,verbose_name='تلگرام')

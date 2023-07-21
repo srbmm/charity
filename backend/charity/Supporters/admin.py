@@ -19,4 +19,3 @@ class SupporterAdmin(admin.ModelAdmin):
 
 
 
-

@@ -4,7 +4,7 @@ from django.db import models
 class PreviousBoard(models.Model):
     full_name = models.CharField(max_length=255,unique=True,verbose_name='نام و  نام خانوادگی')
     avatar = models.ImageField(blank=True,upload_to='Members/',verbose_name='تصویر')
-    biography = models.CharField(max_length=50,verbose_name='بیوگرافی')
+    biography = models.CharField(max_length=50,verbose_name='بیوگرافی',blank=True,null=True)
     created_date = models.DateTimeField(auto_now_add=True,verbose_name='تاریخ ساخت ')
 
     class Meta:
@@ -19,7 +19,7 @@ class PreviousBoard(models.Model):
 class CurrentBoard(models.Model):
     full_name = models.CharField(max_length=255,unique=True,verbose_name='نام و  نام خانوادگی')
     avatar = models.ImageField(blank=True,upload_to='Members/',verbose_name='تصویر')
-    biography = models.CharField(max_length=50,verbose_name='بیوگرافی')
+    biography = models.CharField(max_length=50,verbose_name='بیوگرافی',blank=True)
     created_date = models.DateTimeField(auto_now_add=True,verbose_name='تاریخ ساخت ')
 
     class Meta:
@@ -34,7 +34,7 @@ class CurrentBoard(models.Model):
 class Founders(models.Model):
     full_name = models.CharField(max_length=255,unique=True,verbose_name='نام و  نام خانوادگی')
     avatar = models.ImageField(blank=True,upload_to='Members/',verbose_name='تصویر')
-    biography = models.CharField(max_length=50,verbose_name='بیوگرافی')
+    biography = models.CharField(max_length=50,verbose_name='بیوگرافی',blank=True)
     created_date = models.DateTimeField(auto_now_add=True,verbose_name='تاریخ ساخت ')
 
     class Meta:
@@ -49,7 +49,7 @@ class Founders(models.Model):
 class Trustees(models.Model):
     full_name = models.CharField(max_length=255,unique=True,verbose_name='نام و  نام خانوادگی')
     avatar = models.ImageField(blank=True,upload_to='Members/',verbose_name='تصویر')
-    biography = models.CharField(max_length=50,verbose_name='بیوگرافی')
+    biography = models.CharField(max_length=50,verbose_name='بیوگرافی',blank=True)
     created_date = models.DateTimeField(auto_now_add=True,verbose_name='تاریخ ساخت ')
 
     class Meta:
@@ -64,7 +64,7 @@ class Trustees(models.Model):
 class Inspectors(models.Model):
     full_name = models.CharField(max_length=255,unique=True,verbose_name='نام و  نام خانوادگی')
     avatar = models.ImageField(blank=True,upload_to='Members/',verbose_name='تصویر')
-    biography = models.CharField(max_length=50,verbose_name='بیوگرافی')
+    biography = models.CharField(max_length=50,verbose_name='بیوگرافی',blank=True)
     created_date = models.DateTimeField(auto_now_add=True,verbose_name='تاریخ ساخت ')
 
     class Meta:
@@ -79,7 +79,7 @@ class Inspectors(models.Model):
 class Members(models.Model):
     full_name = models.CharField(max_length=255,unique=True,verbose_name='نام و  نام خانوادگی')
     avatar = models.ImageField(blank=True,upload_to='Members/',verbose_name='تصویر')
-    biography = models.CharField(max_length=50,verbose_name='بیوگرافی')
+    biography = models.CharField(max_length=50,verbose_name='بیوگرافی',blank=True)
     created_date = models.DateTimeField(auto_now_add=True,verbose_name='تاریخ ساخت ')
 
     class Meta:
