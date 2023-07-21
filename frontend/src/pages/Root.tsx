@@ -24,7 +24,9 @@ const Root: React.FC = () => {
                     <div className="xl:pr-20 xl:pl-20 md:pr-10 md:pl-10 mx-10 pb-20 flex flex-wrap pt-10 justify-evenly gap-6">
                         <div className="w-96 flex flex-col gap-6">
                             <h1 className="text-xl">موضوع</h1>
-                            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem ducimus ex iusto laudantium maiores molestiae, nam neque obcaecati porro quas quibusdam quidem recusandae repellat temporibus ut. Accusantium in natus nobis!</p>
+                            <p>
+                                لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان گرافیک است، چاپگرها و متون بلکه روزنامه و مجله در ستون و سطرآنچنان که لازم است، و برای شرایط فعلی تکنولوژی مورد نیاز، و کاربردهای متنوع با هدف بهبود ابزارهای کاربردی می باشد، کتابهای زیادی در شصت و سه درصد گذشته حال و آینده، شناخت فراوان جامعه و متخصصان را می طلبد، تا با نرم افزارها شناخت بیشتری را برای طراحان رایانه ای علی الخصوص طراحان خلاقی، و فرهنگ پیشرو در زبان فارسی ایجاد کرد، در این صورت می توان امید داشت که تمام و دشواری موجود در ارائه راهکارها، و شرایط سخت تایپ به پایان رسد و زمان مورد نیاز شامل حروفچینی دستاوردهای اصلی، و جوابگوی سوالات پیوسته اهل دنیای موجود طراحی اساسا مورد استفاده قرار گیرد.
+                            </p>
                         </div>
                         <img src={main} className="rounded-xl object-cover w-full md:w-1/3"/>
                     </div>

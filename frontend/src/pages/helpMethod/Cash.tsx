@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import {Theme} from "../../components";
 import {useForm} from "react-hook-form"
 import {Label, Select, TextInput, Button} from "flowbite-react";
@@ -11,7 +11,9 @@ const Form = ({topic}) => {
         register,
         handleSubmit,
         formState: { errors }
-    } = useForm()
+    } = useForm({defaultValues: {
+            topic: topic ? topic : ""
+        }})
 
     const onSubmit = (data) =>{
         if (data.topic === "nothing"){
@@ -50,7 +52,7 @@ const Form = ({topic}) => {
             </div>
             <div>
                 <Label htmlFor="topic" value="موضوع*"/>
-                <Select value={topic ? topic : ""} {...register("topic", {required:true})}>
+                <Select {...register("topic", {required:true})}>
                     <option value="">انتخاب نمایید</option>
                     <option value="studentSupport">
                         حمایت از دانشجویان
