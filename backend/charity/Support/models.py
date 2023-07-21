@@ -20,7 +20,7 @@ class NonCashSupport(models.Model):
 
     topic = models.CharField(max_length=20,choices=TOPICS_CHOICES,verbose_name='محل مصرف')
     full_name = models.CharField(max_length=255,verbose_name='نام و نام خانوادگی')
-    phone_number = models.BigIntegerField(verbose_name='شماره تلفن')
+    phone_number =  models.CharField(max_length=20,verbose_name='تلفن همراه')
     support_type = models.CharField(max_length=40,choices=SUPPORT_TYPE_CHOICES,verbose_name='نوع حمایت')
     description = models.TextField(verbose_name='توضیحات')
     support_date = models.DateField(verbose_name='تاریخ حمایت',auto_now_add=True)
@@ -53,8 +53,8 @@ class SupportReceipt(models.Model):
     topic = models.CharField(max_length=20,choices=TOPICS_CHOICES,verbose_name='موضوع')
     support_fund = models.CharField(max_length=70,choices=SUPPORT_FUND_CHOICES,verbose_name='صندوق حمایت')
     full_name = models.CharField(max_length=255,verbose_name='نام و نام خانوادگی')
-    email = models.EmailField(verbose_name='ایمیل')
-    phone_number = models.BigIntegerField(verbose_name='تلفن همراه')
+    email = models.EmailField(verbose_name='ایمیل',blank=True,null=True)
+    phone_number = models.CharField(max_length=20,verbose_name='تلفن همراه')
     amount = models.BigIntegerField(verbose_name='میزان حمایت')
     support_date = models.DateField(verbose_name='تاریخ حمایت',auto_now_add=True)
 
