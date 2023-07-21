@@ -30,7 +30,7 @@ class NonCashSupport(models.Model):
             verbose_name='نوع حمایت',
             blank=True,null=True,default=None  
         )
-    description = models.TextField(verbose_name='توضیحات')
+    description = models.TextField(verbose_name='توضیحات',null=True,blank=True)
     support_date = models.DateField(verbose_name='تاریخ حمایت',auto_now_add=True)
     
     class Meta:
