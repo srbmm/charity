@@ -37,6 +37,7 @@ INSTALLED_APPS = [
     'Project',
     'Information',
     'Support',
+    'Payments',
     
     
     'rest_framework',
