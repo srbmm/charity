@@ -23,11 +23,11 @@ const Footer: React.FC = () => {
                 <div className="flex flex-wrap justify-around p-10  py-20">
                     <div className="flex flex-col gap-2 justify-center">
                         {dataLinks.length ? <h3>لینک ها</h3> : ""}
-                        {dataLinks.map(item => <Link key={item.title} href={item.link}>
+                        {dataLinks.map(item => <a key={item.title} href={item.link}>
                             <div className="flex items-center gap-2">
                                 <span><img src={LinkIcon} /></span>
                                 <span>{item.title}</span></div>
-                        </Link>)}
+                        </a>)}
                     </div>
                     <div className="flex flex-col justify-center gap-4">
                         <div className="flex items-center gap-2">
