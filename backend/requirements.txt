@@ -1,0 +1,18 @@
+
+
+
+
+# django 
+django
+djangorestframework
+django-cors-headers
+django-cors-headers==4.1.0
+
+
+
+# for media
+Pillow
+
+
+# geteways
+az-iranian-bank-gateways
