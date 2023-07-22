@@ -1,8 +1,8 @@
 import React from 'react';
-import {Box} from "@mui/material";
 import useApi from "../../../hook/useApi";
 import getMembers from "../../../data/Members";
 import MemberCard from "../../../components/MemberCard";
+import {Loading, Theme} from "../../../components";
 
 const MembersOfTheFoundingBoard: React.FC = () => {
     const [isLoad, data, err] = useApi(getMembers("members_of_the_founding_board"));

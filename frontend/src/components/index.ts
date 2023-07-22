@@ -2,7 +2,6 @@ import Header from "./Header";
 import Footer from "./Footer";
 import HeaderAndFooter from "./HeaderAndFooter";
 import Theme from "./Theme";
-import BreadCrumb from "./BreadCrumb";
 import Loading from "./Loading";
 import NewsSlider from "./NewsSlider";
 import DropDown from "./DropDown";
@@ -18,7 +17,6 @@ export {
     HeaderAndFooter,
     Footer,
     Loading,
-    BreadCrumb,
     NewsSlider,
     DropDown,
     NewsCard,

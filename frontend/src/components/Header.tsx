@@ -4,7 +4,7 @@ import PAGES from "../constant/PAGES";
 import {Navbar} from "flowbite-react";
 import DropDown from "./DropDown";
 import SecondaryBtn from "./SecondaryBtn";
-import Logo from "/src/assets/images/codesandbox.png"
+import Logo from "/src/assets/images/codesandbox.svg"
 const HemayatBtn = () => {
     const navigate = useNavigate()
     return (

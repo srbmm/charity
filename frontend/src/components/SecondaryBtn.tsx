@@ -4,7 +4,7 @@ import COlOR from "../constant/COLOR";
 
 const SecondaryBtn:React.FC = (props) => {
     return (
-        <Button onClick={props.onClick} {...props} style={{...props.style, backgroundColor: COlOR.secondary}} className="text-slate-600 hover:!bg-yellow-300 transition h-auto px-4 py-0 rounded-[20px]" variant="contained">
+        <Button onClick={props.onClick} className="text-[#fdfdfd] bg-[#3F497F] hover:text-[#3F497F] hover:bg-[rgba(11,72,226,0.3)] transition h-auto px-4 py-0 rounded-[12px]" variant="contained">
             {props.children}
         </Button>
     );

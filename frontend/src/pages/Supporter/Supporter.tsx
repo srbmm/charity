@@ -9,7 +9,7 @@ const Supporter: React.FC = () => {
     return (
         <>
             <Theme>
-                <div className="flex flex-wrap justify-around">
+                <div className="flex flex-wrap justify-around gap-4">
                     {data.map(item => <ParticipantCard participant={item} />)}
                 </div>
             </Theme>

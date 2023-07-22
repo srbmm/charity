@@ -11,7 +11,6 @@ const AuditReport: React.FC = () => {
         <>
             <Theme>
                 <div className="flex flex-col gap-4">
-
                     {data.map(item => <DownloadCard title={item.title} href={item.file} label="دانلود گزارش" /> )}
                 </div>
             </Theme>

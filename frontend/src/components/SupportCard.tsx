@@ -3,10 +3,11 @@ import {Link, useNavigate} from "react-router-dom";
 import fakeNews from "/src/assets/images/fakeNews.jpg"
 import SecondaryBtn from "./SecondaryBtn";
 import PAGES from "../constant/PAGES";
+import More from "./More";
 
 const SupportCard = ({data, revesre}) => {
    const navigate = useNavigate()
-    const color = data.progress >= 70 ? "22A60D" : data.progress >= 40 ? "FCC400" : "9E0F17"
+    const color = data.progress >= 70 ? "539165" : data.progress >= 40 ? "F7C04A" : "9E0F17"
     return (
         <div className={revesre ? "ltr" : ""}>
             <div className="text-right flex items-center justify-around border-b p-5 border-gray-300 xl:px-20">
@@ -16,10 +17,10 @@ const SupportCard = ({data, revesre}) => {
                         <span>{(+data.budget).toLocaleString()}</span>
                         <span className="text-gray-500 text-sm">ریال</span>
                     </div>
-                    <Link to={"/" + PAGES.helpTopic.url + "/" + data.id} className="text-[#0B48E2] hover:text-blue-800">اطلاعات بیشتر</Link>
+                    <More to={"/" + PAGES.helpTopic.url + "/" + data.id}>اطلاعات بیشتر</More>
                 </div>
                 <div className="flex flex-col items-center justify-center">
-                    <div className="flex gap-6">
+                    <div className="flex md:gap-6">
                         <div className="flex gap-1">
                             <span className={`text-[#${color}]`}>{data.progress}</span>
                             <span className={`text-[#${color}]`}>%</span>

@@ -1,6 +1,8 @@
 import {Link} from "react-router-dom";
 import COLOR from "/src/constant/COLOR";
 import FakeNews from '/src/assets/images/fakeNews.jpg'
+import PAGES from "../constant/PAGES";
+import More from "./More";
 
 const NewsBox = ({news}) => {
     return (<div className="w-96 group">
@@ -12,7 +14,7 @@ const NewsBox = ({news}) => {
                         <h3 className="text-[#213D70] mb-2">{news.title}</h3>
                         <p>{news.summary}</p>
                     </div>
-                    <Link to={String(news.id)} className="text-center" style={{color: COLOR.lowPrimary}}>ادامه خبر...</Link>
+                    <More to={"/" + PAGES.news.url+ "/" +String(news.id)}>ادامه خبر...</More>
                 </div>
             </div>
         </div>

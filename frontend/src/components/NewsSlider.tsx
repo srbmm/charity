@@ -4,7 +4,6 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 // Import Swiper styles
 import 'swiper/css';
 import 'swiper/css/navigation';
-import sampleNews from "../assets/images/sampleNews.jpg";
 import {NewsCard as NewsBox} from "/src/components";
 import React from "react";
 import {Navigation} from "swiper/modules";

@@ -46,7 +46,7 @@ const News: React.FC = () => {
                     <option value="seen">پر بازدید ترین اخبار</option>
                 </Select>
             </div>
-            <div className='flex gap-2 justify-around flex-wrap'>
+            <div className='flex gap-5 justify-around flex-wrap'>
                 {...newsInPage}
             </div>
             <Pagination

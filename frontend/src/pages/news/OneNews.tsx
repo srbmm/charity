@@ -4,7 +4,7 @@ import {HeaderAndFooter, Loading} from "../../components";
 import useApi from "../../hook/useApi";
 import {getOneNews} from "../../data/News";
 import {NotFound} from "../index";
-
+import fakeNews from "/src/assets/images/fakeNews.jpg"
 const OneNews: React.FC = () => {
     const params = useParams()
     const [isLoad, news, error] = useApi(getOneNews(params.id))
@@ -17,7 +17,7 @@ const OneNews: React.FC = () => {
                 <div className="flex flex-col gap-4 justify-center p-5">
                     <div className="flex flex-wrap gap-2 justify-center">
                     <p className="p-5">{news.summary}</p>
-                    <img src={news.avatar} className="w-96 rounded-xl"/>
+                    <img src={news.avatar ? news.avatar : fakeNews} className="w-96 rounded-xl"/>
                     </div>
                     <p className="p-5">{news.text}</p>
                 </div>
