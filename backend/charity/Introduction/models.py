@@ -280,13 +280,13 @@ class Audit(models.Model):
     def title(self):
         return f'{self.year} گزارش حسابرسی در سال'
     
-
+    """
     def save(self, *args, **kwargs):
         temp = Audit.objects.filter(year = self.year)
         if temp:
             return
         super().save(*args, **kwargs)
-
+    """
             
 
     class Meta:
@@ -336,13 +336,13 @@ class Performance(models.Model):
     def title(self):
         return f'{self.year} گزارش عملکردی در سال'
     
-
+    """
     def save(self, *args, **kwargs):
         temp = Performance.objects.filter(year = self.year)
         if temp:
             return
         super().save(*args, **kwargs)
-
+    """
     def __str__(self):
         return f'{self.year} گزارش عملکردی سال'
 

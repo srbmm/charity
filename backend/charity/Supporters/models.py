@@ -6,7 +6,7 @@ class Supporter(models.Model):
     #categories = models.ManyToManyField('Category',verbose_name='دسته بندی ها')
     full_name = models.CharField(max_length=255,verbose_name='نام و نام خانوادگی')
     avatar = models.ImageField(blank=True,upload_to='supporters/',verbose_name='تصویر')
-    biography = models.CharField(max_length=70,blank=True,verbose_name='بیوگرافی')
+    biography = models.CharField(max_length=100,blank=True,verbose_name='بیوگرافی')
     description = models.TextField(blank=True,verbose_name='توضیحات')
     created_date = models.DateTimeField(auto_now_add=True,verbose_name='تاریخ ساخت')
     is_special = models.BooleanField(default=False,verbose_name='حامی صفحه اصلی')
