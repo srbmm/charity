@@ -22,7 +22,7 @@ const PAGES = {
             "members_of_the_board_of_trustees": {url: "members-of-the-board-of-trustees", label: "اعضاء هیئت امناء"},
             "members_of_the_founding_board": {url: "members-of-the-founding-board", label: "اعضاء هیات موسسان"},
             "investigators": {url: "investigators", label: "بازرسان"},
-            "members_of_the_general_assembly": {url: "members-of-the-general-assembly", label: "بازرسان"},
+            "members_of_the_general_assembly": {url: "members-of-the-general-assembly", label: "اعضای مجمع عمومی"},
 
         "reports": {url: "reports", label: "گزارش ها"},
             "financialStatements": {url: "financial-statements", label: "صورت های مالی"},
