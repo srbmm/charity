@@ -11,8 +11,11 @@ db.sqlite3
 db.sqlite3-journal
 
 venv/
-# migration file 
-0001_initial.py
+
+# migrations 
+**/migrations/**
+!**/migrations
+!**/migrations/__init__.py
 
 # If your build process includes running collectstatic, then you probably don't need or want to include staticfiles/
 # in your Git repository. Update and uncomment the following line accordingly.
@@ -396,3 +399,5 @@ fabric.properties
 
 # End of https://www.toptal.com/developers/gitignore/api/python,django,react,webstorm
 .idea
+
+
